@@ -1,19 +1,3 @@
-/*
-# TITLE: Ancestral Colorings of Perfect Binary Trees With Applications in Private Retrieval of Merkle Proofs
-# PURPOSE: In this paper, we develop a divide-and-conquer algorithm called Color-Splitting Algorithm (CSA)
-#          that takes h as input and generates a balanced ancestral coloring for the perfect binary tree T (h)
-#          of height h in time almost linear in the number of tree nodes. In fact, this algorithm can generate
-#          not only a balanced ancestral coloring but also any ancestral coloring (color classes having heterogeneous
-#          sizes) feasible for 𝑇 (ℎ). It is worth noting that this flexibility of our algorithm establishes the
-#          existence of optimal combinatorial patterned-batch codes corresponding to the case of servers with
-#          heterogeneous storage capacities as well. At the high level, the algorithm colors two sibling nodes
-#          at a time and proceeds recursively down to the two subtrees and repeats the process while maintaining
-#          the Ancestral Property: if a color is used for a node then it will not be used for the descendants of that node.
-#          Finding a way to split the colors for the two subtrees to guarantee that the algorithm runs smoothly until the end
-#          is a highly nontrivial task. Using our algorithm implemented in Java, we can generate a balanced ancestral coloring
-#          for the tree T (30) (around two billion nodes) in under five minutes (with 16GB allocated for Java’s heap memory).
-*/
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -191,7 +175,6 @@ public class CSA {
                 "A. * Automatic Balanced Ancestral Coloring *",
                 "B. * Manual Feasible Color Sequences *",
                 "Q. * Quit *"};
-
         for (String s : menu) {
             System.out.println(s);
         }
