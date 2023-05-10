@@ -22,7 +22,7 @@ We run our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GH
     T(34) = 4378425 milliseconds = 1.22 hours       (Recommended the maximum Java heap size: 240GB)
     T(35) = 8691602 milliseconds = 2.41 hours       (Recommended the maximum Java heap size: 500GB)
 
-### Compiling CSA
+### Executing CSA
 Once Java and Javac are installed, to build CSA simply run:
 
     javac CSA.java
@@ -33,7 +33,7 @@ To build CSA with recommended max heap size simply run:
     javac CSA.java
     java -Xmx32g CSA
 
-### Using CSA
+### User Interface Guideline (CSA)
 
 Take a look at the pictures below, guidelines and in CSA.java comments for how to use CSA.  
 
