@@ -19,7 +19,7 @@ We run our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GH
     T(34) = 4378425 milliseconds = 1.22 hours       (Recommended the maximum Java heap size: 240GB)
     T(35) = 8691602 milliseconds = 2.41 hours       (Recommended the maximum Java heap size: 500GB)
 
-We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 CPUs, 64GiB System Memory, 12.5 Gbps network bandwidth, all running Ubuntu 22-04 LTS). Our Java code (CSA.java) was compiled using Java OpenJDK version 11.0.19. We ran 100 times of CSA for each tree leaves size ranging from $2^{10}$ to $2^{20}$ and calculated the average. The results are presented as below:
+We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 CPUs, 64GiB System Memory, 12.5 Gbps network bandwidth, all running Ubuntu 22-04 LTS). Our Java code (CSA.java) was compiled using Java OpenJDK version 11.0.19. We ran 100 times of CSA for each tree leaves size ranging from $2^{10}$ to $2^{20}$ and calculated the average. The results are presented in Figure 1.
 
 <p align="center">
   <img width="400" height="350" src="https://github.com/cnquang/testPIR/assets/87842051/4017a802-45a4-4eb4-bf16-fbe754bed0fe">
