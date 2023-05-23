@@ -7,7 +7,7 @@ We develop a divide-and-conquer CSA algorithm that generates a **balanced and un
 
 ### Experimental setup (CSA)
 
-We ran our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz) based on Red Hat Enterprise Linux Server version 7.9 (Maipo)  all running Linux 3.10.0-1160.59.1.el7.x86_64 x86_64. We compile our Java code with Java OpenJDK version "1.8.0_322" and Javac version 1.8.0_322. Time generates a balanced ancestral coloring for the tree T (h) as below:
+We ran our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz) based on Red Hat Enterprise Linux Server version 7.9 (Maipo)  all running Linux 3.10.0-1160.59.1.el7.x86_64 x86_64. We compile our Java code with Java OpenJDK version 1.8.0_322. Time generates a balanced ancestral coloring for the tree T (h) as below:
 
     T(20) = 224 milliseconds
     T(25) = 7523 milliseconds   = 7.52 seconds
