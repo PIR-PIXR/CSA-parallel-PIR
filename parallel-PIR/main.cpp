@@ -306,6 +306,7 @@ int main(int argc, char *argv[]) {
         threads[j].join();
       }
     }
+    
     auto end = chrono::high_resolution_clock::now();
     auto total = duration_cast<microseconds>(end - start).count();
     cout << "SEALPIR Decoded time: " << total / 1000 << " ms" << endl;
