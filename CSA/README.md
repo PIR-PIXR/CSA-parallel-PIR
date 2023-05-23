@@ -54,9 +54,9 @@ Take a look at the pictures below, guidelines and in CSA.java comments for how t
 
 <img width="415" alt="h5auto" src="https://user-images.githubusercontent.com/102839948/161372568-85df8aed-6424-4977-9853-722879624efe.png">
 
-*Fig 1: An example of the CSA algorithm running option A (Automatic Balanced Ancestral Coloring) when h = 5.*
+*Fig 2: An example of the CSA algorithm running option A (Automatic Balanced Ancestral Coloring) when h = 5.*
 
 
 <img width="575" alt="h3manual" src="https://user-images.githubusercontent.com/102839948/161372572-773c693e-bd18-4a97-b979-00bbc393fce9.png">
 
-*Fig 2: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
+*Fig 3: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
