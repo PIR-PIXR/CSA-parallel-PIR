@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="476" height="249" src="https://user-images.githubusercontent.com/87842051/213029654-f513939d-4e7e-4baa-8a6a-5b74aa4484e8.png">
+  <img width="250" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/fba201f1-3818-4e0b-b0a9-cca7ffd4b74c">
 </p>
 
 # Parallel-PIR: Parallel SealPIR
