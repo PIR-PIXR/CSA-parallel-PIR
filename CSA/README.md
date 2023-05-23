@@ -2,11 +2,8 @@
   <img width="550" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/890b9b4a-9c9c-4f62-b899-f1d0e4eb8289">
 </p>
 
-# Parallelizing Private Information Retrieval of Merkle Proofs via Tree Colorings
-Abstract: We present a new partition binary tree algorithm derived from a novel tree coloring problem. In this problem, every node in a rooted tree with a height of $h$ is assigned one out of $h$ available colors satisfying any two nodes connected as ancestors and descendants must have distinct colors. Our major contribution is the characterization of $all$ possible input color sequences based on majorizations. We then develop an almost linear time divide-and-conquer algorithm to generate such a coloring for $every$ perfect binary tree of height $h\geq 2$. The algorithm presented efficiently produces a balanced ancestral coloring for large trees with around two billion nodes in less than five minutes, ensuring that the numbers of nodes in any two different color classes differ by at most one. The balanced ancestral coloring is crucial in enhancing the efficiency of $parallel$ private information retrieval (PIR) schemes, specifically when retrieving a Merkle proof in a Merkle tree. This research concentrates explicitly on the computational PIR implementation of SealPIR, a state-of-the-art PIR scheme. It demonstrates a remarkable reduction in running time by a factor of $\Theta(h/2)$. Additionally, balanced ancestral coloring provides insights into combinatorial batch codes. When the batch of nodes follows a specific pattern along a root-to-leaf path in a tree, the total storage capacity required can be reduced by a factor of $\Theta(h)$ compared to an $arbitrary$ batch while maintaining a balanced distribution of storage capacity across h servers. Furthermore, our findings reveal an infinite family of graphs where the equitable chromatic number can be explicitly determined. This family of graphs has not been previously discovered in existing literature, making it a novel contribution. You can find a copy of the paper [here](https://arxiv.org/abs/2205.05211)
-
 ## CSA: Color-Splitting Algorithm
-We develop a divide-and-conquer CSA algorithm that generates a balanced and unbalanced ancestral coloring. For balanced ancestral coloring, the algorithm is running time almost linear in the number of tree nodes, the running time is in O(2^{h+1}*log h). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
+We develop a divide-and-conquer CSA algorithm that generates a **balanced and unbalanced** ancestral coloring. For balanced ancestral coloring, the algorithm is running time almost linear in the number of tree nodes, the running time is in O(2^{h+1}*log h). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
 
 ### Experimental setup (CSA)
 
@@ -21,6 +18,22 @@ We run our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GH
     T(33) = 1994432 milliseconds = 33.24 minutes    (Recommended the maximum Java heap size: 120GB)
     T(34) = 4378425 milliseconds = 1.22 hours       (Recommended the maximum Java heap size: 240GB)
     T(35) = 8691602 milliseconds = 2.41 hours       (Recommended the maximum Java heap size: 500GB)
+
+We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 CPUs, 64GiB System Memory, 12.5 Gbps network bandwidth, all running Ubuntu 22-04 LTS). Our Java code (CSA.java) was compiled using Java OpenJDK version 11.0.19. We ran 100 times of CSA for each tree leaves size ranging from $2^{10}$ to $2^{20}$ and calculated the average. The results are presented as below:
+
+<p align="center">
+  <img width="400" height="400" src="https://github.com/cnquang/testPIR/assets/87842051/4017a802-45a4-4eb4-bf16-fbe754bed0fe">
+</p>
+<strong> Fig. 1.</strong> Color-Splitting Algorithm (CSA) generates balanced ancestral coloring for the perfect binary tree, which the number of leaves from $2^{10}$ to $2^{20}$. Every point is the average 100 times running CSA, corresponding with the number of leaves.
+
+---
+## Compiling CSA
+### Installing Libraries
+
+- #### Javac
+      $ sudo apt update
+      $ sudo apt upgrade
+      $ sudo apt install default-jdk
 
 ### Executing CSA
 Once Java and Javac are installed, to build CSA simply run:
