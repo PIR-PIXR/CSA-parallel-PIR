@@ -7,15 +7,7 @@ We develop a divide-and-conquer CSA algorithm that generates a **balanced and un
 
 ### Experimental setup (CSA)
 
-We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 CPUs, 64GiB System Memory, 12.5 Gbps network bandwidth, all running Ubuntu 22-04 LTS). Our Java code (CSA.java) was compiled using Java OpenJDK version 11.0.19. We ran 100 times of CSA for each tree leaves size ranging from $2^{10}$ to $2^{20}$ and calculated the average. The results are presented in Figure 1.
-
-<p align="center">
-  <img width="400" height="350" src="https://github.com/cnquang/testPIR/assets/87842051/4017a802-45a4-4eb4-bf16-fbe754bed0fe">
-</p>
-<strong> Fig. 1.</strong> Color-Splitting Algorithm (CSA) generates balanced ancestral coloring for the perfect binary tree, which the number of leaves from $2^{10}$ to $2^{20}$. Every point is the average 100 times running CSA, corresponding with the number of leaves.
-
-Moreover, we ran our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz) based on Red Hat Enterprise Linux Server version 7.9 (Maipo)  all running Linux 3.10.0-1160.59.1.el7.x86_64 x86_64. We compile our Java code with Java OpenJDK version "1.8.0_322" and Javac version 1.8.0_322. Time generates a balanced ancestral coloring for the tree T (h) as below:
-
+We ran our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz) based on Red Hat Enterprise Linux Server version 7.9 (Maipo)  all running Linux 3.10.0-1160.59.1.el7.x86_64 x86_64. We compile our Java code with Java OpenJDK version "1.8.0_322" and Javac version 1.8.0_322. Time generates a balanced ancestral coloring for the tree T (h) as below:
 
     T(20) = 224 milliseconds
     T(25) = 7523 milliseconds   = 7.52 seconds
@@ -25,6 +17,13 @@ Moreover, we ran our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v
     T(33) = 1994432 milliseconds = 33.24 minutes    (Recommended the maximum Java heap size: 120GB)
     T(34) = 4378425 milliseconds = 1.22 hours       (Recommended the maximum Java heap size: 240GB)
     T(35) = 8691602 milliseconds = 2.41 hours       (Recommended the maximum Java heap size: 500GB)
+
+Moreover, we ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 CPUs, 64GiB System Memory, 12.5 Gbps network bandwidth, all running Ubuntu 22-04 LTS). Our Java code (CSA.java) was compiled using Java OpenJDK version 11.0.19. We ran 100 times of CSA for each tree leaves size ranging from $2^{10}$ to $2^{20}$ and calculated the average. The results are presented in Figure 1.
+
+<p align="center">
+  <img width="400" height="350" src="https://github.com/cnquang/testPIR/assets/87842051/4017a802-45a4-4eb4-bf16-fbe754bed0fe">
+</p>
+<strong> Fig. 1.</strong> Color-Splitting Algorithm (CSA) generates balanced ancestral coloring for the perfect binary tree, which the number of leaves from $2^{10}$ to $2^{20}$. Every point is the average 100 times running CSA, corresponding with the number of leaves.
 
 ---
 ## Compiling CSA
