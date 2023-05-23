@@ -36,15 +36,15 @@ We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) 
       $ sudo apt install default-jdk
 
 ### Executing CSA
-Once Java and Javac are installed, to build CSA simply run:
+- #### Once Java and Javac are installed, to build CSA simply run:
 
-    javac CSA.java
-    java CSA
+    $ javac CSA.java
+    $ java CSA
 
-To build CSA with recommended max heap size simply run:
+- #### To build CSA with recommended max heap size simply run:
 
-    javac CSA.java
-    java -Xmx32g CSA
+    $ javac CSA.java
+    $ java -Xmx32g CSA
 
 ### User Interface Guideline (CSA)
 
