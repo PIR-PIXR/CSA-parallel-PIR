@@ -37,16 +37,16 @@ Moreover, we ran our experiments using the Amazone c6i.8xlarge instance (Intel(R
 ### Executing CSA
 - #### Once Java and Javac are installed, to build CSA simply run:
 
-    $ javac CSA.java
-    $ java CSA
+      $ javac CSA.java
+      $ java CSA
 
 - #### To build CSA with recommended max heap size simply run:
 
-    $ javac CSA.java
-    $ java -Xmx32g CSA
+      $ javac CSA.java
+      $ java -Xmx32g CSA
 
 ### Plotting
-    $ python3 figureCSA.py
+      $ python3 figureCSA.py
     
 ### User Interface Guideline (CSA)
 
