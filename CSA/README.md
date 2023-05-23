@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/890b9b4a-9c9c-4f62-b899-f1d0e4eb8289">
+  <img width="250" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/9435d9e8-4df5-4a84-9939-3e67768689b8">
 </p>
 
 ## CSA: Color-Splitting Algorithm
