@@ -45,6 +45,9 @@ Moreover, we ran our experiments using the Amazone c6i.8xlarge instance (Intel(R
     $ javac CSA.java
     $ java -Xmx32g CSA
 
+### Plotting
+    $ python3 figureCSA.py
+    
 ### User Interface Guideline (CSA)
 
 Take a look at the pictures below, guidelines and in CSA.java comments for how to use CSA.  
