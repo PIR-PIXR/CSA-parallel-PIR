@@ -1,23 +1,23 @@
 #include "pir.hpp"
 #include "pir_client.hpp"
 #include "pir_server.hpp"
-#include <chrono>
-#include <cstddef>
-#include <cstdint>
-#include <memory>
-#include <random>
-#include <seal/seal.h>
 #include <ctime>
 #include <mutex>
+#include <chrono>
+#include <memory>
+#include <random>
 #include <string>
+#include <thread>
+#include <cstddef>
+#include <cstdint>
 #include <cstdlib>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <unistd.h>
 #include <pthread.h>
-#include <thread>
 #include <filesystem>
+#include <seal/seal.h>
 #include <condition_variable>
 
 using namespace std::chrono;
@@ -28,19 +28,17 @@ std::string filename;
 std::ofstream outputFile;
 std::condition_variable cv;
 
-bool onetime = false;
+int countThread1 = 0;
+int countThread2 = 0;
 bool onetime1 = false;
 bool onetime2 = false;
 bool onetime3 = false;
-int countThread1 = 0;
-int countThread2 = 0;
-int countThread3 = 0;
-
-auto start = chrono::high_resolution_clock::now();
 int totalsize, totalquerysize, totalanswersize;
 
-void SealPIR(uint64_t number_of_items, uint64_t size_per_item, uint32_t N, uint32_t logt, uint32_t d, int h, int sol) {
+auto start = chrono::high_resolution_clock::now();
 
+//---------------------------------------------------SealPIR function----------------------------------------------------
+void SealPIR(uint64_t number_of_items, uint64_t size_per_item, uint32_t N, uint32_t logt, uint32_t d, int h, int sol) {
   EncryptionParameters enc_params(scheme_type::bfv);
   PirParams pir_params;
   // Generates all parameters
@@ -160,11 +158,10 @@ void SealPIR(uint64_t number_of_items, uint64_t size_per_item, uint32_t N, uint3
 
   // Measure response extraction
   vector<uint8_t> elems = client.decode_reply(reply, offset); //Anwser decoded
-
 }
 
+//---------------------------------------------------MAIN----------------------------------------------------
 int main(int argc, char *argv[]) {
-
   int h; //height of the tree
   int solution;
   int option;
@@ -217,9 +214,9 @@ int main(int argc, char *argv[]) {
         break;
       }
 
-      bool onetime1 = true;
-      bool onetime2 = true;
-      bool onetime3 = true;
+      onetime1 = true;
+      onetime2 = true;
+      onetime3 = true;
 
       //1.1. Call SealPIR on the whole tree
       if(solution == 1){
@@ -243,9 +240,11 @@ int main(int argc, char *argv[]) {
         SealPIR(number_of_items, size_per_item, N, logt, d, 1, 0);
       }
 
-      bool onetime1 = false;
-      bool onetime2 = false;
-      bool onetime3 = false;
+      onetime1 = false;
+      onetime2 = false;
+      onetime3 = false;
+      countThread1 = 0;
+      countThread2 = 0;
     }
     //2. Call SealPIR on the whole tree h times parallel
     else if(option == 2) {
@@ -308,18 +307,16 @@ int main(int argc, char *argv[]) {
       }
     }
     auto end = chrono::high_resolution_clock::now();
-    //countThread3 = 0;
-    onetime3 = false;
     auto total = duration_cast<microseconds>(end - start).count();
     cout << "SEALPIR Decoded time: " << total / 1000 << " ms" << endl;
     outputFile << total / 1000 << std::endl;
-    countThread1 = 0;
     onetime1 = false;
-    countThread2 = 0;
     onetime2 = false;
+    onetime3 = false;
+    countThread1 = 0;
+    countThread2 = 0;
 
     outputFile.close();
   }
-
   return 0;
 }
