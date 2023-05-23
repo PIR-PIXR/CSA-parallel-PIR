@@ -60,3 +60,7 @@ Take a look at the pictures below, guidelines and in CSA.java comments for how t
 <img width="575" alt="h3manual" src="https://user-images.githubusercontent.com/102839948/161372572-773c693e-bd18-4a97-b979-00bbc393fce9.png">
 
 *Fig 3: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
+
+---
+## ACKNOWLEDGMENTS 
+This work was supported by the Australian Research Council through the Discovery Project under Grant DP200100731.
