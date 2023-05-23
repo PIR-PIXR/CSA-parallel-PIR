@@ -2,7 +2,7 @@
   <img width="250" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/9435d9e8-4df5-4a84-9939-3e67768689b8">
 </p>
 
-## CSA: Color-Splitting Algorithm
+## CSA: A "Color-Splitting Algorithm" Library that achieves high performance and flexibility.
 We develop a divide-and-conquer CSA algorithm that generates a **balanced and unbalanced** ancestral coloring. For balanced ancestral coloring, the algorithm is running time almost linear in the number of tree nodes, the running time is in O(2^{h+1}*log h). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
 
 ### Experimental setup (CSA)
