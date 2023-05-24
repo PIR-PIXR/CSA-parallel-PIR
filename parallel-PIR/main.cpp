@@ -33,7 +33,7 @@ int countThread2 = 0;
 bool onetime1 = false;
 bool onetime2 = false;
 bool onetime3 = false;
-int totalsize, totalquerysize, totalanswersize;
+int totalquerysize, totalanswersize;
 
 auto start = chrono::high_resolution_clock::now();
 
@@ -316,6 +316,8 @@ int main(int argc, char *argv[]) {
     onetime3 = false;
     countThread1 = 0;
     countThread2 = 0;
+    totalquerysize = 0;
+    totalanswersize = 0;
 
     outputFile.close();
   }
