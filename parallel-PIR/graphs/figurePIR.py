@@ -349,7 +349,7 @@ fig, a = plt.subplots(figsize=(7, 5))
 a.plot(num_leave, Avg_WholeTree_Comp_Server, label='h-time-WholeTree', marker='x', linestyle='-', color='black')
 a.plot(num_leave, Avg_OneProof_Comp_Server, label='Proof-as-Element', marker='.', linestyle='-.', color='black')
 a.plot(num_leave, Avg_Layer_Comp_Server, label='Layer-based', marker='.', linestyle=':', color='black')
-a.plot(num_leave, Avg_PBC_Comp_Server, label='Batch-SealPIR', marker='x', linestyle='--', color='black')
+a.plot(num_leave, Avg_PBC_Comp_Server, label='PBC-SealPIR', marker='x', linestyle='--', color='black')
 a.plot(num_leave, Avg_Color_Comp_Server, label='Coloring-based', marker='.', linestyle='-', color='black')
 
 # Chart customization
@@ -370,7 +370,7 @@ Avg_Color_Comp_Server_zoom = Avg_Color_Comp_Server[8:11]
 
 # Plotting Client costs
 in_ax.plot(num_leave_zoom, Avg_Layer_Comp_Server_zoom, label='Layer-based', marker='.', linestyle=':', color='black')
-in_ax.plot(num_leave_zoom, Avg_PBC_Comp_Server_zoom, label='Batch-SealPIR', marker='x', linestyle='--', color='black')
+in_ax.plot(num_leave_zoom, Avg_PBC_Comp_Server_zoom, label='PBC-SealPIR', marker='x', linestyle='--', color='black')
 in_ax.plot(num_leave_zoom, Avg_Color_Comp_Server_zoom, label='Coloring-based', marker='.', linestyle='-', color='black')
 
 # Chart customization
