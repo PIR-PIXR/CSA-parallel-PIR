@@ -5,6 +5,7 @@
 6. Balanced ancestral coloring - O(2n/h)'''
 
 import matplotlib.pyplot as plt
+from matplotlib.pyplot import text
 
 REP = 1
 step = 5
@@ -206,39 +207,46 @@ BETWEEN THE SERVER AND CLIENT IS 100 MBPS.'''
 Color_TotalComp_per_TotalCompComm = [Avg_Color_Comp[i] * 100/Total_Color_Cost[i] for i in range(len(Total_Color_Cost))]
 print(Color_TotalComp_per_TotalCompComm)
 
-# Plotting
-plt.plot(num_leave, Trival_Comm_Cost, label='Trivial (100 Mbps)')
-plt.plot(num_leave, Total_WholeTree_Cost, label='h-time-WholeTree')
-plt.plot(num_leave, Total_OneProof_Cost, label='Proof-as-Element')
-plt.plot(num_leave, Total_Layer_Cost, label='Layer-based')
-plt.plot(num_leave, Total_PBC_Cost, label='Batch-SealPIR')
-plt.plot(num_leave, Total_Color_Cost, label='Coloring-based')
-
-# Chart customization
-plt.xlabel('Number of leave (n)')
-plt.ylabel('Elapsed time (ms)')
-plt.title('A Comparison of the Total Running Times of Different Retrieval Schemes')
-plt.legend()
-
-# Display the chart
-plt.show()
+# create figure and axes
+fig, ax = plt.subplots(1, 2, figsize=(14.2, 4.5))
 
 # Plotting
-plt.plot(num_leave, Trival_Comm_Cost, label='Trivial (100 Mbps)')
-plt.plot(num_leave, WholeTree_Comm_Cost, label='h-time-WholeTree')
-plt.plot(num_leave, OneProof_Comm_Cost, label='Proof-as-Element')
-plt.plot(num_leave, Layer_Comm_Cost, label='Layer-based')
-plt.plot(num_leave, PBC_Comm_Cost, label='Batch-SealPIR')
-plt.plot(num_leave, Color_Comm_Cost, label='Coloring-based')
+ax[0].plot(num_leave, Trival_Comm_Cost, label='Trivial (100 Mbps)', marker='', linestyle='-', color='black')
+ax[0].plot(num_leave, Total_WholeTree_Cost, label='h-time-WholeTree', marker='x', linestyle='-', color='black')
+ax[0].plot(num_leave, Total_OneProof_Cost, label='Proof-as-Element', marker='+', linestyle='-.', color='black')
+ax[0].plot(num_leave, Total_Layer_Cost, label='Layer-based', marker='x', linestyle=':', color='black')
+ax[0].plot(num_leave, Total_PBC_Cost, label='Batch-SealPIR', marker='x', linestyle='--', color='black')
+ax[0].plot(num_leave, Total_Color_Cost, label='Coloring-based', marker='o', linestyle='-', color='black')
+
 
 # Chart customization
-plt.xlabel('Number of leave (n)')
-plt.ylabel('Elapsed time (ms)')
-plt.title('A Comparison of the Communication Costs of Different Retrieval Schemes')
-plt.legend()
+ax[0].set_xlabel('Number of leave (n)', weight='bold', size = 12)
+ax[0].set_ylabel('Elapsed time (ms)', weight='bold', size = 12)
+ax[0].set_title('Total Running Times', weight='bold', size = 14)
+# remove top and right spines
+ax[0].spines['right'].set_visible(False)
+ax[0].spines['top'].set_visible(False)
+ax[0].legend()
+
+# Plotting
+ax[1].plot(num_leave, Trival_Comm_Cost, label='Trivial (100 Mbps)', marker='', linestyle='-', color='black')
+ax[1].plot(num_leave, WholeTree_Comm_Cost, label='h-time-WholeTree', marker='x', linestyle='-', color='black')
+ax[1].plot(num_leave, OneProof_Comm_Cost, label='Proof-as-Element', marker='+', linestyle='-.', color='black')
+ax[1].plot(num_leave, Layer_Comm_Cost, label='Layer-based', marker='x', linestyle=':', color='black')
+ax[1].plot(num_leave, PBC_Comm_Cost, label='Batch-SealPIR', marker='x', linestyle='--', color='black')
+ax[1].plot(num_leave, Color_Comm_Cost, label='Coloring-based', marker='o', linestyle='-', color='black')
+
+# Chart customization
+ax[1].set_xlabel('Number of leave (n)', weight='bold', size = 12)
+ax[1].set_ylabel('Elapsed time (ms)', weight='bold', size = 12)
+ax[1].set_title('Communication Costs', weight='bold', size = 14)
+# remove top and right spines
+ax[1].spines['right'].set_visible(False)
+ax[1].spines['top'].set_visible(False)
+ax[1].legend()
 
 # Display the chart
-plt.show()
+plt.savefig('SealPIR-100Mbps.pdf', dpi=300, bbox_inches='tight')
 
 
 #test
