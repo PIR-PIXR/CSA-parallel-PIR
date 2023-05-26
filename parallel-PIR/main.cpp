@@ -236,7 +236,7 @@ int main(int argc, char *argv[]) {
       }
       //1.4. Call SealPIR on a Probabilistic Batch Code - O(3n/1.5logn)
       else {
-        number_of_items = ceil(2*(2*n - 2)/h);
+        number_of_items = static_cast<int>(ceil(3*(2*n - 2)/ceil(1.5*h)));
         SealPIR(number_of_items, size_per_item, N, logt, d, 1, 0);
       }
 
@@ -281,7 +281,7 @@ int main(int argc, char *argv[]) {
     }
     //5. Probabilistic Batch Code SealPIR
     else if(option == 5) {
-      number_of_items = static_cast<int>(ceil(2*(2*n - 2)/h));
+      number_of_items = static_cast<int>(ceil(3*(2*n - 2)/ceil(1.5*h)));
       size_per_item = 32;
       int q = static_cast<int>(ceil(1.5 * h));
       std::thread threads[q];
