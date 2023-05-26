@@ -254,22 +254,22 @@ ax[0].bar(bar_6_x, Trival_Total_Comm_Cost_sliced, width=bar_width, fill = False,
 
 for i in range(0, len(x_label_sliced), 2):
     value = WholeTree_Total_Comm_Cost_sliced[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.1
-    ax[0].text(bar_1_x[i] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90, fontweight='bold')
+    ax[0].text(bar_1_x[i] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90)
 
     value = OneProof_Total_Comm_Cost_sliced[i] + OneProof_Total_Comp_Cost_sliced[i] + 0.1
-    ax[0].text(bar_2_x[i] - 0.05, value, 'Proof-as-Element', color = 'black', rotation = 90, fontweight='bold')
+    ax[0].text(bar_2_x[i] - 0.05, value, 'Proof-as-Element', color = 'black', rotation = 90)
 
     value = Layer_Total_Comm_Cost_sliced[i] + Layer_Total_Comp_Cost_sliced[i] + 0.1
-    ax[0].text(bar_3_x[i] - 0.05, value, 'Layer-base', color = 'black', rotation = 90, fontweight='bold')
+    ax[0].text(bar_3_x[i] - 0.05, value, 'Layer-base', color = 'black', rotation = 90)
 
     value = PBC_Total_Comm_Cost_sliced[i] + PBC_Total_Comp_Cost_sliced[i] + 0.1
-    ax[0].text(bar_4_x[i] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90, fontweight='bold')
+    ax[0].text(bar_4_x[i] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90)
 
     value = Color_Total_Comm_Cost_sliced[i] + Color_Total_Comp_Cost_sliced[i] + 0.1
     ax[0].text(bar_5_x[i] - 0.05, value, 'Coloring-based', color = 'black', rotation = 90, fontweight='bold')
 
     value = Trival_Total_Comm_Cost_sliced[i] + 0.1
-    ax[0].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90, fontweight='bold')
+    ax[0].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
 
 
 # Chart customization
@@ -311,23 +311,37 @@ ax[1].bar(bar_6_x, Trival_Total_Comm_Cost_sliced_1G, width=bar_width, fill = Fal
 
 for i in range(1, len(x_label_sliced) - 1, 2):
     value = WholeTree_Total_Comm_Cost_sliced_1G[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.1
-    ax[1].text(bar_1_x[i] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90, fontweight='bold')
+    ax[1].text(bar_1_x[i] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90)
 
     value = OneProof_Total_Comm_Cost_sliced_1G[i] + OneProof_Total_Comp_Cost_sliced[i] + 0.1
-    ax[1].text(bar_2_x[i] - 0.05, value, 'Proof-as-Element', color = 'black', rotation = 90, fontweight='bold')
+    ax[1].text(bar_2_x[i] - 0.05, value, 'Proof-as-Element', color = 'black', rotation = 90)
 
     value = Layer_Total_Comm_Cost_sliced_1G[i] + Layer_Total_Comp_Cost_sliced[i] + 0.1
-    ax[1].text(bar_3_x[i] - 0.05, value, 'Layer-base', color = 'black', rotation = 90, fontweight='bold')
+    ax[1].text(bar_3_x[i] - 0.05, value, 'Layer-base', color = 'black', rotation = 90)
 
     value = PBC_Total_Comm_Cost_sliced_1G[i] + PBC_Total_Comp_Cost_sliced[i] + 0.1
-    ax[1].text(bar_4_x[i] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90, fontweight='bold')
+    ax[1].text(bar_4_x[i] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90)
 
     value = Color_Total_Comm_Cost_sliced_1G[i] + Color_Total_Comp_Cost_sliced[i] + 0.1
     ax[1].text(bar_5_x[i] - 0.05, value, 'Coloring-based', color = 'black', rotation = 90, fontweight='bold')
 
     value = Trival_Total_Comm_Cost_sliced_1G[i] + 0.1
-    ax[1].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90, fontweight='bold')
+    ax[1].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
 
+value = WholeTree_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + WholeTree_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
+ax[1].text(bar_1_x[len(x_label_sliced) - 1] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90)
+
+value = Layer_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + Layer_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
+ax[1].text(bar_3_x[len(x_label_sliced) - 1] - 0.05, value, 'Layer-base', color = 'black', rotation = 90)
+
+value = PBC_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + PBC_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
+ax[1].text(bar_4_x[len(x_label_sliced) - 1] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90)
+
+value = Color_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + Color_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
+ax[1].text(bar_5_x[len(x_label_sliced) - 1] - 0.05, value, 'Coloring-based', color = 'black', rotation = 90, fontweight='bold')
+
+value = Trival_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + 0.1
+ax[1].text(bar_6_x[len(x_label_sliced) - 1] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
 
 # Chart customization
 ax[1].set_xlabel('n', weight='bold', size = 14)
@@ -401,7 +415,8 @@ connection_line = ConnectionPatch((ellipse_center_x, ellipse_center_y + 0.3), (7
                                   lw = 1, color='gray')
 a.add_artist(connection_line)
 
-a.legend()
+legend = a.legend()
+legend.get_texts()[4].set_fontweight('bold')
 
 # Display the chart
 plt.savefig('serverSealPIR.pdf', dpi=300, bbox_inches='tight')
