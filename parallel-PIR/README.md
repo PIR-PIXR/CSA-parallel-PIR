@@ -35,7 +35,9 @@ We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) 
       $ cmake .
       $ make
       $ sudo bin/main
-
+### Plotting
+      $ cd graphs
+      $ python3 figurePIR.py
 ---
 ## ACKNOWLEDGMENTS
 This work was supported by the Australian Research Council through the Discovery Project under Grant DP200100731.
