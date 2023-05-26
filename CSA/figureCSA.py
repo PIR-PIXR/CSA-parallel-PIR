@@ -32,17 +32,15 @@ def average(array):
 Micro_Avage = average(Micro)
 Mili_Avage = [element/1000 for element in Micro_Avage]
 
-print(Mili_Avage)
-
 num_leave = [2 ** element for element in Height]
 
 # Plotting
 plt.plot(num_leave, Mili_Avage, marker='o', linestyle='-', color='black')
 
 # Chart customization
-plt.xlabel('Number of leaves (n)', weight='bold', size = 12)
-plt.ylabel('Elapsed time (ms)', weight='bold', size = 12)
-plt.title('CSA Running Times', weight='bold', size = 14)
+plt.xlabel('n', weight='bold', size = 12)
+plt.ylabel('milliseconds', weight='bold', size = 12)
+plt.title('CSA Running Time', weight='bold', size = 14)
 # Access the axes object
 ax = plt.gca()
 
