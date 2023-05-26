@@ -272,7 +272,7 @@ int main(int argc, char *argv[]) {
       std::thread threads[h];
       for (int i = 1; i < h + 1; i++) {
         number_of_items = 1 << i;
-        threads[i] = std::thread(SealPIR, number_of_items, size_per_item, N, logt, d, h, option);
+        threads[i - 1] = std::thread(SealPIR, number_of_items, size_per_item, N, logt, d, h, option);
       }
       // Wait for all threads to finish
       for (int j = 0; j < h; j++) {
