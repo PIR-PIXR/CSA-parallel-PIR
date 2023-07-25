@@ -20,6 +20,7 @@ We develop a divide-and-conquer CSA algorithm that generates a balanced and unba
 ## Parallel PIR retrieving Merkle proof
 Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree. Note that the index retrieval phase does not rule out the case where the item does not belong to the block.  
 Now, the client wants to privately and efficiently download the Merkle proof of that item and verify if the item is really included in the block. Given the index, the client knows precisely which nodes to download from the Merkle tree. Our solution (h-time-WholeTree) is to run $h$ parallel PIR on the $h$ color classes/sub-databases as a result of CSA.
+
 ---
 ## ACKNOWLEDGMENTS 
 This work was supported by the Australian Research Council through the Discovery Project under Grant DP200100731.
