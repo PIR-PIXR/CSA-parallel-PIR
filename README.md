@@ -26,7 +26,7 @@ Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree.
 Now, the client wants to privately and efficiently download the Merkle proof of that item and verify if the item is really included in the block. Given the index, the client knows precisely which nodes to download from the Merkle tree. Our solution (h-time-WholeTree) is to run $h$ parallel PIR on the $h$ color classes/sub-databases as a result of CSA.
 
 <p align="center">
-  <img width="400" height="300" src="https://github.com/cnquang/testCSA/assets/87842051/191b9395-b00c-4bfd-9bcb-88276ec85516">
+  <img width="600" height="300" src="https://github.com/cnquang/testCSA/assets/87842051/191b9395-b00c-4bfd-9bcb-88276ec85516">
 </p>
 <strong> Fig. 1.</strong> An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
 
