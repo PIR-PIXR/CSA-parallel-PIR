@@ -49,7 +49,7 @@ In contrast, the probabilistic solution presented in \cite{angel2018}, known as 
 <strong> Fig. 1.</strong> A comparison of the server computation costs of five solutions from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based solution is always better than other solutions.
 
 <p align="center">
-  <img width="400" height="300" src="https://github.com/cnquang/testCSA/assets/87842051/276bd6fb-7954-4baf-9c78-0cd9de97d11f"> 
+  <img width="800" height="300" src="https://github.com/cnquang/testCSA/assets/87842051/276bd6fb-7954-4baf-9c78-0cd9de97d11f"> 
 </p>
 <strong> Fig. 2.</strong> A comparison of the total running times (communication and computation) of six solutions in the network bandwidth 100 Mbps and 1 Gbps. Our coloring-based solution beats the trivial solution from $n = 2^{17}$ and $n = 2^{19}$ respectively.
 
