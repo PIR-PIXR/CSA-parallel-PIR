@@ -29,12 +29,12 @@ The server(s) should not be able to learn which path is being retrieved based on
 We assume a setting in which the nodes of a Merkle/perfect binary tree are stored at one multi-core server or multiple (single-core) servers. Hence, the system is capable of parallel processing. This is a key assumption of our approach to work. For brevity, we will use the multi-server setting henceforth. To simplify the discussion, we assume that the servers have the same storage/computational capacities and will complete the same workload simultaneously.
 
 ---
-## CSA: Color-Splitting Algorithm
+## [CSA: Color-Splitting Algorithm](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/CSA)
 
 We develop a divide-and-conquer CSA algorithm that generates a balanced and unbalanced ancestral coloring. For balanced ancestral coloring, the algorithm's running time is almost linear in the number of tree nodes, the running time is in O(N*loglog(N)). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously, proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
 
 ---
-## Parallel PIR retrieving Merkle proof
+## [Parallel PIR retrieving Merkle proof](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/parallel-PIR)
 
 Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree. Note that the index retrieval phase does not rule out the case where the item does not belong to the block. Now, the client wants to privately and efficiently download the Merkle proof of that item and verify if the item is really included in the block. Given the index, the client knows precisely which nodes to download from the Merkle tree. Our solution (h-time-WholeTree) is to run $h$ parallel PIR on the $h$ color classes/sub-databases as a result of CSA.
 
