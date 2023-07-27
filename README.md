@@ -2,7 +2,6 @@
   <img width="400" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/a1977288-1e72-4cfb-b233-a8cf89e93fe8">
 </p>
 
----
 # Parallelizing Private Information Retrieval of Merkle Proofs via Tree Colorings
 
 Abstract: Motivated by a practical scenario in blockchains in which a client, who possesses a transaction, wishes to privately verify that the transaction actually belongs to a block, we investigate the problem of private retrieval of Merkle proofs (i.e. proofs of inclusion/membership) in a Merkle tree.
