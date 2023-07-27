@@ -204,7 +204,7 @@ num_leave = [2 ** element for element in height]
 Trival_Total_Comm_Cost = [(2 * 2 ** element - 2) * 256/network_bandwidth_100 for element in height]
 
 #Number of leaves
-x_label = ['2^10', '2^11', '2^12', '2^13', '2^14', '2^15', '2^16', '2^17', '2^18', '2^19', '2^20']
+x_label = ['$2^{10}$', '$2^{11}$', '$2^{12}$', '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$', '$2^{18}$', '$2^{19}$', '$2^{20}$']
 
 # create figure and axes
 fig, ax = plt.subplots(2, 1, figsize=(16, 6))
@@ -254,7 +254,7 @@ ax[0].bar(bar_6_x, Trival_Total_Comm_Cost_sliced, width=bar_width, fill = False,
 
 for i in range(0, len(x_label_sliced), 2):
     value = WholeTree_Total_Comm_Cost_sliced[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.1
-    ax[0].text(bar_1_x[i] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90)
+    ax[0].text(bar_1_x[i] - 0.05, value, '$h$-Repetition', color = 'black', rotation = 90)
 
     value = OneProof_Total_Comm_Cost_sliced[i] + OneProof_Total_Comp_Cost_sliced[i] + 0.1
     ax[0].text(bar_2_x[i] - 0.05, value, 'Proof-as-Element', color = 'black', rotation = 90)
@@ -311,7 +311,7 @@ ax[1].bar(bar_6_x, Trival_Total_Comm_Cost_sliced_1G, width=bar_width, fill = Fal
 
 for i in range(1, len(x_label_sliced) - 1, 2):
     value = WholeTree_Total_Comm_Cost_sliced_1G[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.1
-    ax[1].text(bar_1_x[i] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90)
+    ax[1].text(bar_1_x[i] - 0.05, value, '$h$-Repetition', color = 'black', rotation = 90)
 
     value = OneProof_Total_Comm_Cost_sliced_1G[i] + OneProof_Total_Comp_Cost_sliced[i] + 0.1
     ax[1].text(bar_2_x[i] - 0.05, value, 'Proof-as-Element', color = 'black', rotation = 90)
@@ -329,7 +329,7 @@ for i in range(1, len(x_label_sliced) - 1, 2):
     ax[1].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
 
 value = WholeTree_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + WholeTree_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
-ax[1].text(bar_1_x[len(x_label_sliced) - 1] - 0.05, value, 'h-time-WholeTree', color = 'black', rotation = 90)
+ax[1].text(bar_1_x[len(x_label_sliced) - 1] - 0.05, value, '$h$-Repetition', color = 'black', rotation = 90)
 
 value = Layer_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + Layer_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
 ax[1].text(bar_3_x[len(x_label_sliced) - 1] - 0.05, value, 'Layer-base', color = 'black', rotation = 90)
@@ -360,7 +360,7 @@ plt.savefig('totalSealPIR.pdf', dpi=300, bbox_inches='tight')
 fig, a = plt.subplots(figsize=(7, 5))
 
 # Plotting Server costs
-a.plot(num_leave, Avg_WholeTree_Comp_Server, label='h-time-WholeTree', marker='x', linestyle='-', color='black')
+a.plot(num_leave, Avg_WholeTree_Comp_Server, label='$h$-Repetition', marker='x', linestyle='-', color='black')
 a.plot(num_leave, Avg_OneProof_Comp_Server, label='Proof-as-Element', marker='.', linestyle='-.', color='black')
 a.plot(num_leave, Avg_Layer_Comp_Server, label='Layer-based', marker='.', linestyle=':', color='black')
 a.plot(num_leave, Avg_PBC_Comp_Server, label='PBC-SealPIR', marker='x', linestyle='--', color='black')
