@@ -3,11 +3,11 @@
 </p>
 
 # CSA: A "Color-Splitting Algorithm" Library that achieves high performance and flexibility.
-We develop a divide-and-conquer CSA algorithm that generates a **balanced and unbalanced** ancestral coloring. For balanced ancestral coloring, the algorithm is running time almost linear in the number of tree nodes, the running time is in O(2^{h+1}*log h). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
+We develop a divide-and-conquer CSA algorithm that generates a **balanced and unbalanced** ancestral coloring. For balanced ancestral coloring, the algorithm's running time is almost linear in the number of tree nodes; the running time is in O(N*log h). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously, proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
 
 ### Experimental setup (CSA)
 
-We ran our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz) based on Red Hat Enterprise Linux Server version 7.9 (Maipo)  all running Linux 3.10.0-1160.59.1.el7.x86_64 x86_64. We compile our Java code with Java OpenJDK version 1.8.0_322. Time generates a balanced ancestral coloring for the tree T (h) as below:
+We ran our experiments on Linux server (Intel(R) Xeon(R) CPU E5-2690 v2 @ 3.00GHz) based on Red Hat Enterprise Linux Server version 7.9 (Maipo), all running Linux 3.10.0-1160.59.1.el7.x86_64 x86_64. We compile our Java code with Java OpenJDK version 1.8.0_322. Time generates a balanced ancestral coloring for the tree T (h) as below:
 
     T(20) = 224 milliseconds
     T(25) = 7523 milliseconds   = 7.52 seconds
@@ -50,7 +50,7 @@ Moreover, we ran our experiments using the Amazone c6i.8xlarge instance (Intel(R
     
 ### User Interface Guideline (CSA)
 
-Take a look at the pictures below, guidelines and in CSA.java comments for how to use CSA.  
+Take a look at the pictures below, guidelines and CSA.java comments for how to use CSA.  
 
 <img width="415" alt="h5auto" src="https://user-images.githubusercontent.com/102839948/161372568-85df8aed-6424-4977-9853-722879624efe.png">
 
