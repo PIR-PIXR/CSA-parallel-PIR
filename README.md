@@ -1,6 +1,7 @@
 <p align="center">
   <img width="400" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/a1977288-1e72-4cfb-b233-a8cf89e93fe8">
 </p>
+
 ---
 # Parallelizing Private Information Retrieval of Merkle Proofs via Tree Colorings
 
