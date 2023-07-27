@@ -1,13 +1,25 @@
 <p align="center">
   <img width="400" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/a1977288-1e72-4cfb-b233-a8cf89e93fe8">
 </p>
-
+---
 # Parallelizing Private Information Retrieval of Merkle Proofs via Tree Colorings
 
 Abstract: Motivated by a practical scenario in blockchains in which a client, who possesses a transaction, wishes to privately verify that the transaction actually belongs to a block, we investigate the problem of private retrieval of Merkle proofs (i.e. proofs of inclusion/membership) in a Merkle tree.
 In this setting, one or more servers store the nodes of a binary tree (a Merkle tree), while a client wants to retrieve the set of nodes along a root-to-leaf path (i.e. a Merkle proof, after appropriate node swapping operations), without letting the servers know which path is being retrieved. 
 We propose a method that partitions the Merkle tree to enable parallel private retrieval of the Merkle proofs. The partitioning step is based on a novel tree coloring called \textit{ancestral coloring} in which nodes that have ancestor-descendant relationships must have distinct colors. To minimize the retrieval time, the coloring is required to be balanced, i.e. the sizes of the color classes differ by at most one. We develop a fast algorithm to find a balanced (in fact, any) ancestral coloring in almost linear time in the number of tree nodes, which can handle trees with billions of nodes in a few minutes. Our partitioning method can be applied on top of any private information retrieval scheme, leading to the minimum storage overhead and fastest running times compared to existing approaches. You can find a copy of the paper [here](https://arxiv.org/abs/2205.05211)
 
+---
+## Main Contributions
+
+- We propose an efficient approach to parallelize the private retrieval of the Merkle proofs based on the novel concept of balanced ancestral coloring of rooted trees. Our approach achieves the lowest possible storage overhead (no redundancy) and lowest computation complexity compared to existing approaches.
+
+- We establish a necessary and sufficient condition for the existence of an ancestral coloring with arbitrary color sequences, i.e. color class sizes. Our condition allows us to check if an ancestral coloring for the perfect binary tree $T(4)$ using three red, six green, eight blue, and thirteen purple nodes exists.
+
+- We develop a \textit{divide-and-conquer} algorithm to generate an ancestral coloring for \textit{every} feasible color sequence with time complexity $\Theta(n\log\log(n))$ on the perfect binary tree of $n$ leaves. The algorithm can color a tree of two billion nodes in under five minutes.
+
+- Finally, we implement and evaluate the empirical performance of our approach using SealPIR~\cite{sealpir2022} as the underlying PIR scheme.
+
+---
 ## Problem Description
 
 Given a (perfect) Merkle tree stored at one or more servers, we are interested in designing an \textit{efficient} private retrieval scheme in which a client can send queries to the server(s) and retrieve an arbitrary Merkle proof without letting the server(s) know which proof is being retrieved. This problem is equivalent to the problem of designing an efficient private retrieval scheme for every root-to-leaf path in a perfect binary tree (with depth $h$ and $n=2^h$ leaves).
