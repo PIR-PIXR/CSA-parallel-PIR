@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/9435d9e8-4df5-4a84-9939-3e67768689b8">
+  <img width="250" height="250" src="https://github.com/cnquang/cnquang/assets/87842051/528567b4-5d06-4fad-98bb-869592d432ac">
 </p>
 
 # CSA: A "Color-Splitting Algorithm" Library that achieves high performance and flexibility.
