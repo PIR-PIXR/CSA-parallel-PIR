@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" height="250" src="https://github.com/cnquang/testPIR/assets/87842051/fba201f1-3818-4e0b-b0a9-cca7ffd4b74c">
+  <img width="250" height="250" src="https://github.com/cnquang/cnquang/assets/87842051/8c730560-bbc7-44d3-9a56-491a1034fefd">
 </p>
 
 # Parallel-PIR: Parallel SealPIR
@@ -44,12 +44,12 @@ To summarize, our coloring-based solution provides a novel partitioning of the M
 In contrast, the probabilistic solution presented in \cite{angel2018}, known as PBC-SealPIR, consistently requires an additional $\lceil 1.5h \rceil$ cores compared to other methods. As a result, the communication costs associated with PBC-SealPIR are consistently the highest. At the same time, the Proof-as-Element approach only requires a single core, making it the most efficient communication cost. The total communication and computation costs in our solution are better than others and beat the trivial solution downloading the whole database from $n = 2^{17}$ and $n = 2^{19}$ when the bandwidths are 100Mbps and 1 Gbps, respectively. Note that for bandwidths larger than 100Mbps, the computation time will contribute to a higher percentage of the total running time. Also, a larger bandwidth will make the trivial algorithm faster, and as a consequence, the threshold of the leaves size $(n)$ where a Coloring-based scheme like ours can beat the trivial solution will be increased. 
 
 <p align="center">
-  <img width="400" height="300" src="https://github.com/cnquang/testCSA/assets/87842051/24111ba5-e493-49a4-ab65-cec3c02c2ca7">
+  <img width="400" height="300" src="https://github.com/cnquang/cnquang/assets/87842051/28cb5788-119c-4555-b4e0-6e6a470fc892">
 </p>
 <strong> Fig. 1.</strong> A comparison of the server computation costs of five solutions from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based solution is always better than other solutions.
 
 <p align="center">
-  <img width="800" height="350" src="https://github.com/cnquang/testCSA/assets/87842051/276bd6fb-7954-4baf-9c78-0cd9de97d11f"> 
+  <img width="800" height="350" src="https://github.com/cnquang/cnquang/assets/87842051/f4b01f38-6c87-4036-8ddd-41fd12bbfd2c"> 
 </p>
 <strong> Fig. 2.</strong> A comparison of the total running times (communication and computation) of six solutions in the network bandwidth 100 Mbps and 1 Gbps. Our coloring-based solution beats the trivial solution from $n = 2^{17}$ and $n = 2^{19}$ respectively.
 
