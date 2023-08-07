@@ -201,7 +201,7 @@ height = average(height2)
 num_leave = [2 ** element for element in height]
 
 #Total communication cost in seconds of the trivial solution (Download the whole Merkle tree)
-Trival_Total_Comm_Cost = [(2 * 2 ** element - 2) * 256/network_bandwidth_100 for element in height]
+#Trival_Total_Comm_Cost = [(2 * 2 ** element - 2) * 256/network_bandwidth_100 for element in height]
 
 #Number of leaves
 x_label = ['$2^{10}$', '$2^{11}$', '$2^{12}$', '$2^{13}$', '$2^{14}$', '$2^{15}$', '$2^{16}$', '$2^{17}$', '$2^{18}$', '$2^{19}$', '$2^{20}$']
@@ -223,7 +223,7 @@ PBC_Total_Comm_Cost_sliced = PBC_Total_Comm_Cost[5:11]
 PBC_Total_Comp_Cost_sliced = PBC_Total_Comp_Cost[5:11]
 Color_Total_Comm_Cost_sliced = Color_Total_Comm_Cost[5:11]
 Color_Total_Comp_Cost_sliced = Color_Total_Comp_Cost[5:11]
-Trival_Total_Comm_Cost_sliced = Trival_Total_Comm_Cost[5:11]
+#Trival_Total_Comm_Cost_sliced = Trival_Total_Comm_Cost[5:11]
 
 bar_width = 0.15
 
@@ -249,11 +249,11 @@ ax[0].bar(bar_4_x, PBC_Total_Comp_Cost_sliced, width=bar_width, bottom = PBC_Tot
 ax[0].bar(bar_5_x, Color_Total_Comm_Cost_sliced, width=bar_width, fill = False, hatch = '...')
 ax[0].bar(bar_5_x, Color_Total_Comp_Cost_sliced, width=bar_width, bottom = Color_Total_Comm_Cost_sliced, color = 'gray', hatch = '///')
 
-ax[0].bar(bar_6_x, Trival_Total_Comm_Cost_sliced, width=bar_width, fill = False, hatch = '...')
+#ax[0].bar(bar_6_x, Trival_Total_Comm_Cost_sliced, width=bar_width, fill = False, hatch = '...')
 
 
 for i in range(0, len(x_label_sliced), 2):
-    value = WholeTree_Total_Comm_Cost_sliced[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.1
+    value = WholeTree_Total_Comm_Cost_sliced[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.2
     ax[0].text(bar_1_x[i] - 0.05, value, '$h$-Repetition', color = 'black', rotation = 90)
 
     value = OneProof_Total_Comm_Cost_sliced[i] + OneProof_Total_Comp_Cost_sliced[i] + 0.1
@@ -263,20 +263,20 @@ for i in range(0, len(x_label_sliced), 2):
     ax[0].text(bar_3_x[i] - 0.05, value, 'Layer-base', color = 'black', rotation = 90)
 
     value = PBC_Total_Comm_Cost_sliced[i] + PBC_Total_Comp_Cost_sliced[i] + 0.1
-    ax[0].text(bar_4_x[i] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90)
+    ax[0].text(bar_4_x[i] - 0.05, value, 'SealPIR', color = 'black', rotation = 90)
 
-    value = Color_Total_Comm_Cost_sliced[i] + Color_Total_Comp_Cost_sliced[i] + 0.1
+    value = Color_Total_Comm_Cost_sliced[i] + Color_Total_Comp_Cost_sliced[i] + 0.2
     ax[0].text(bar_5_x[i] - 0.05, value, 'Coloring-based', color = 'black', rotation = 90, fontweight='bold')
 
-    value = Trival_Total_Comm_Cost_sliced[i] + 0.1
-    ax[0].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
+    #value = Trival_Total_Comm_Cost_sliced[i] + 0.1
+    #ax[0].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
 
 
 # Chart customization
 ax[0].set_xlabel('n', weight='bold', size = 14)
 ax[0].set_ylabel('seconds', weight='bold', size = 14)
 ax[0].set_title('Total Running Times', weight='bold', size = 16)
-ax[0].set_xticks(bar_4_x, x_label_sliced)
+ax[0].set_xticks(bar_3_x, x_label_sliced)
 # remove top and right spines
 ax[0].spines['right'].set_visible(False)
 ax[0].spines['top'].set_visible(False)
@@ -290,7 +290,7 @@ OneProof_Total_Comm_Cost_sliced_1G = [element / 10 for element in OneProof_Total
 Layer_Total_Comm_Cost_sliced_1G = [element / 10 for element in Layer_Total_Comm_Cost_sliced]
 PBC_Total_Comm_Cost_sliced_1G = [element / 10 for element in PBC_Total_Comm_Cost_sliced]
 Color_Total_Comm_Cost_sliced_1G = [element / 10 for element in Color_Total_Comm_Cost_sliced]
-Trival_Total_Comm_Cost_sliced_1G = [element / 10 for element in Trival_Total_Comm_Cost_sliced]
+#Trival_Total_Comm_Cost_sliced_1G = [element / 10 for element in Trival_Total_Comm_Cost_sliced]
 
 ax[1].bar(bar_1_x, WholeTree_Total_Comm_Cost_sliced_1G, width=bar_width, fill = False, label='Communication costs (1 Gbps)', hatch = '...')
 ax[1].bar(bar_1_x, WholeTree_Total_Comp_Cost_sliced, width=bar_width, bottom = WholeTree_Total_Comm_Cost_sliced_1G, label='Computation costs', color = 'gray', hatch = '///')
@@ -307,10 +307,10 @@ ax[1].bar(bar_4_x, PBC_Total_Comp_Cost_sliced, width=bar_width, bottom = PBC_Tot
 ax[1].bar(bar_5_x, Color_Total_Comm_Cost_sliced_1G, width=bar_width, fill = False, hatch = '...')
 ax[1].bar(bar_5_x, Color_Total_Comp_Cost_sliced, width=bar_width, bottom = Color_Total_Comm_Cost_sliced_1G, color = 'gray', hatch = '///')
 
-ax[1].bar(bar_6_x, Trival_Total_Comm_Cost_sliced_1G, width=bar_width, fill = False, hatch = '...')
+#ax[1].bar(bar_6_x, Trival_Total_Comm_Cost_sliced_1G, width=bar_width, fill = False, hatch = '...')
 
 for i in range(1, len(x_label_sliced) - 1, 2):
-    value = WholeTree_Total_Comm_Cost_sliced_1G[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.1
+    value = WholeTree_Total_Comm_Cost_sliced_1G[i] + WholeTree_Total_Comp_Cost_sliced[i] + 0.2
     ax[1].text(bar_1_x[i] - 0.05, value, '$h$-Repetition', color = 'black', rotation = 90)
 
     value = OneProof_Total_Comm_Cost_sliced_1G[i] + OneProof_Total_Comp_Cost_sliced[i] + 0.1
@@ -320,40 +320,40 @@ for i in range(1, len(x_label_sliced) - 1, 2):
     ax[1].text(bar_3_x[i] - 0.05, value, 'Layer-base', color = 'black', rotation = 90)
 
     value = PBC_Total_Comm_Cost_sliced_1G[i] + PBC_Total_Comp_Cost_sliced[i] + 0.1
-    ax[1].text(bar_4_x[i] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90)
+    ax[1].text(bar_4_x[i] - 0.05, value, 'SealPIR', color = 'black', rotation = 90)
 
-    value = Color_Total_Comm_Cost_sliced_1G[i] + Color_Total_Comp_Cost_sliced[i] + 0.1
+    value = Color_Total_Comm_Cost_sliced_1G[i] + Color_Total_Comp_Cost_sliced[i] + 0.2
     ax[1].text(bar_5_x[i] - 0.05, value, 'Coloring-based', color = 'black', rotation = 90, fontweight='bold')
 
-    value = Trival_Total_Comm_Cost_sliced_1G[i] + 0.1
-    ax[1].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
+    #value = Trival_Total_Comm_Cost_sliced_1G[i] + 0.1
+    #ax[1].text(bar_6_x[i] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
 
-value = WholeTree_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + WholeTree_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
+value = WholeTree_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + WholeTree_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.2
 ax[1].text(bar_1_x[len(x_label_sliced) - 1] - 0.05, value, '$h$-Repetition', color = 'black', rotation = 90)
 
 value = Layer_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + Layer_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
 ax[1].text(bar_3_x[len(x_label_sliced) - 1] - 0.05, value, 'Layer-base', color = 'black', rotation = 90)
 
 value = PBC_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + PBC_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
-ax[1].text(bar_4_x[len(x_label_sliced) - 1] - 0.05, value, 'PBC-SealPIR', color = 'black', rotation = 90)
+ax[1].text(bar_4_x[len(x_label_sliced) - 1] - 0.05, value, 'SealPIR', color = 'black', rotation = 90)
 
-value = Color_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + Color_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.1
+value = Color_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + Color_Total_Comp_Cost_sliced[len(x_label_sliced) - 1] + 0.2
 ax[1].text(bar_5_x[len(x_label_sliced) - 1] - 0.05, value, 'Coloring-based', color = 'black', rotation = 90, fontweight='bold')
 
-value = Trival_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + 0.1
-ax[1].text(bar_6_x[len(x_label_sliced) - 1] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
+#value = Trival_Total_Comm_Cost_sliced_1G[len(x_label_sliced) - 1] + 0.1
+#ax[1].text(bar_6_x[len(x_label_sliced) - 1] - 0.05, value, 'Trivial', color = 'black', rotation = 90)
 
 # Chart customization
 ax[1].set_xlabel('n', weight='bold', size = 14)
 ax[1].set_ylabel('seconds', weight='bold', size = 14)
-ax[1].set_xticks(bar_4_x, x_label_sliced)
+ax[1].set_xticks(bar_3_x, x_label_sliced)
 # remove top and right spines
 ax[1].spines['right'].set_visible(False)
 ax[1].spines['top'].set_visible(False)
 
 ax[1].legend()
 
-plt.savefig('totalSealPIR.pdf', dpi=300, bbox_inches='tight')
+plt.savefig('totalPIRtime.pdf', dpi=300, bbox_inches='tight')
 
 #######################################################################################################
 # create figure and axes
@@ -363,7 +363,7 @@ fig, a = plt.subplots(figsize=(7, 5))
 a.plot(num_leave, Avg_WholeTree_Comp_Server, label='$h$-Repetition', marker='x', linestyle='-', color='black')
 a.plot(num_leave, Avg_OneProof_Comp_Server, label='Proof-as-Element', marker='.', linestyle='-.', color='black')
 a.plot(num_leave, Avg_Layer_Comp_Server, label='Layer-based', marker='.', linestyle=':', color='black')
-a.plot(num_leave, Avg_PBC_Comp_Server, label='PBC-SealPIR', marker='x', linestyle='--', color='black')
+a.plot(num_leave, Avg_PBC_Comp_Server, label='SealPIR', marker='x', linestyle='--', color='black')
 a.plot(num_leave, Avg_Color_Comp_Server, label='Coloring-based', marker='.', linestyle='-', color='black')
 
 # Chart customization
@@ -384,7 +384,7 @@ Avg_Color_Comp_Server_zoom = Avg_Color_Comp_Server[8:11]
 
 # Plotting Client costs
 in_ax.plot(num_leave_zoom, Avg_Layer_Comp_Server_zoom, label='Layer-based', marker='.', linestyle=':', color='black')
-in_ax.plot(num_leave_zoom, Avg_PBC_Comp_Server_zoom, label='PBC-SealPIR', marker='x', linestyle='--', color='black')
+in_ax.plot(num_leave_zoom, Avg_PBC_Comp_Server_zoom, label='SealPIR', marker='x', linestyle='--', color='black')
 in_ax.plot(num_leave_zoom, Avg_Color_Comp_Server_zoom, label='Coloring-based', marker='.', linestyle='-', color='black')
 
 # Chart customization
@@ -419,4 +419,4 @@ legend = a.legend()
 legend.get_texts()[4].set_fontweight('bold')
 
 # Display the chart
-plt.savefig('serverSealPIR.pdf', dpi=300, bbox_inches='tight')
+plt.savefig('serverPIRtime.pdf', dpi=300, bbox_inches='tight')
