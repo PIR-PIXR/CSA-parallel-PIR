@@ -16,7 +16,7 @@ To ensure that all threads execute concurrently and avoid potential data race is
 We ran each scheme ten times and calculated the average server and (server+client) computation times. The results are presented in Figure 1 (server times only) and Figure 2 (total running time = server+client computation times plus the communication times). To calculate the communication times, we assume network bandwidths of 100Mbps and 1Gbps, the typical expected range for 5G mobile phones in Australia. 
 
 <p align="center">
-  <img width="900" height="400" src="https://github.com/cnquang/cnquang/assets/87842051/ce2c3047-16cf-44c6-9882-e10f97a29de3"> 
+  <img width="1000" height="400" src="https://github.com/cnquang/cnquang/assets/87842051/ce2c3047-16cf-44c6-9882-e10f97a29de3"> 
 </p>
 <strong> Table 1.</strong> A comparison of our  scheme and related batch PIR schemes regarding the total storage overhead, the number $m$ of databases (or cores/servers/buckets), the server/client running times, and the failure probability. Here, $N$ and $h$ denote the number of tree nodes and the tree height, respectively, and $\ell\geq 2$ is the tuning parameter in the subcube code. The client's time is much lower than the server's time in practice as it only processes the indices. The big-O notation cannot capture this fact.
 
