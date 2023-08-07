@@ -46,7 +46,7 @@ Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree.
 
 ---
 ## Experimental setup
-We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 CPUs, 64GiB System Memory, 12.5 Gbps network bandwidth). We performed these experiments on Ubuntu 22-04 LTS.
+We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 vCPUs, 64GiB System Memory, 12.5 Gbps network bandwidth). We performed these experiments on Ubuntu 22-04 LTS.
 
 ---
 ## ACKNOWLEDGMENTS 
