@@ -59,12 +59,12 @@ On the other hand, the Proof-as-Element approach only requires a single core, ma
 <p align="center">
   <img width="500" height="350" src="https://github.com/cnquang/cnquang/assets/87842051/92dcbf05-1fbf-458d-b759-adfd68ebba36">
 </p>
-<strong> Fig. 1.</strong> A comparison of the server computation costs of five solutions from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based solution is always better than other solutions.
+<strong> Fig. 1.</strong> A comparison of the server computation costs of five schemes from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based scheme outperforms others.
 
 <p align="center">
   <img width="900" height="400" src="https://github.com/cnquang/cnquang/assets/87842051/1405b979-329f-4a79-b506-ddc7bf7d7bd8"> 
 </p>
-<strong> Fig. 2.</strong> A comparison of the total running times (communication and computation) of six solutions in the network bandwidth 100 Mbps and 1 Gbps. Our coloring-based solution beats the trivial solution from $n = 2^{17}$ and $n = 2^{19}$ respectively.
+<strong> Fig. 2.</strong> A comparison of the total running times (communication and computation) of five PIR schemes in the network bandwidth 100 Mbps and 1 Gbps.
 
 ---
 ## ACKNOWLEDGMENTS
