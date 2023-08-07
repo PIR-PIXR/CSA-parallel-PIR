@@ -18,7 +18,7 @@ We propose a method that partitions the Merkle tree to enable parallel private r
 
 - We develop a \textit{divide-and-conquer} algorithm to generate an ancestral coloring for \textit{every} feasible color sequence with time complexity $\Theta(n\log\log(n))$ on the perfect binary tree of $n$ leaves. The algorithm can color a tree of two billion nodes in under five minutes.
 
-- Finally, we implement and evaluate the empirical performance of our approach using SealPIR~\cite{sealpir2022} as the underlying PIR scheme.
+- Finally, we implement and evaluate the empirical performance of our approach using SealPIR as the underlying PIR scheme.
 
 ---
 ## Problem Description
