@@ -23,8 +23,8 @@ We propose a method that partitions the Merkle tree to enable parallel private r
 ---
 ## Problem Description
 
-Given a (perfect) Merkle tree stored at one or more servers, we are interested in designing an \textit{efficient} private retrieval scheme in which a client can send queries to the server(s) and retrieve an arbitrary Merkle proof without letting the server(s) know which proof is being retrieved. This problem is equivalent to the problem of designing an efficient private retrieval scheme for every root-to-leaf path in a perfect binary tree (with depth $h$ and $n=2^h$ leaves).
-An efficient retrieval scheme should have \textit{low} \textit{storage}, \textit{computation}, and \textit{communication overheads}.
+Given a (perfect) Merkle tree stored at one or more servers, we are interested in designing an _efficient_ private retrieval scheme in which a client can send queries to the server(s) and retrieve an arbitrary Merkle proof without letting the server(s) know which proof is being retrieved. This problem is equivalent to the problem of designing an efficient private retrieval scheme for every root-to-leaf path in a perfect binary tree (with depth $h$ and $n=2^h$ leaves).
+An efficient retrieval scheme should have _low storage, computation, and communication overheads_.
 The server(s) should not be able to learn which path is being retrieved based on the queries received from the client. We do not need to formally define privacy because it is nonessential to our contribution and also because the privacy of our solution is guaranteed by the privacy of the underlying PIR scheme straightforwardly.
 
 We assume a setting in which the nodes of a Merkle/perfect binary tree are stored at one multi-core server or multiple (single-core) servers. Hence, the system is capable of parallel processing. This is a key assumption of our approach to work. For brevity, we will use the multi-server setting henceforth. To simplify the discussion, we assume that the servers have the same storage/computational capacities and will complete the same workload simultaneously.
