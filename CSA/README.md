@@ -23,7 +23,7 @@ Moreover, we ran our experiments using the Amazone c6i.8xlarge instance (Intel(R
 <p align="center">
   <img width="400" height="350" src="https://github.com/cnquang/cnquang/assets/87842051/094db937-525d-4dc5-bb59-fe2964b8c867">
 </p>
-<strong> Fig. 1.</strong> The average running times of the Color-Splitting Algorithm (CSA) when generating *balanced ancestral colorings* for the perfect binary trees with $n = 2^{10},2^{11},\ldots,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
+<strong> Fig. 1.</strong> The average running times of the Color-Splitting Algorithm (CSA) when generating _balanced ancestral colorings_ for the perfect binary trees with $n = 2^{10},2^{11},...,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
 
 ---
 ## Compiling CSA
