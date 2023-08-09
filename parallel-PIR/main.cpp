@@ -189,7 +189,7 @@ int main(int argc, char *argv[]) {
       break;
     }
 
-    std::string folderPath = "FULL-PATH/CSA-parallel-PIR/parallelPIR/graphs";
+    std::string folderPath = "FULL-PATH/CSA-parallel-PIR/parallel-PIR/graphs";
     std::filesystem::create_directory(folderPath);
     filename = folderPath + "/output" + std::to_string(option) + ".txt";
     outputFile.open(filename, std::ios::app); // Open the file in append mode
