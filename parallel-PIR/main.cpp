@@ -189,7 +189,7 @@ int main(int argc, char *argv[]) {
       break;
     }
 
-    std::string folderPath = "FULL-PATH/CSA-parallel-PIR/parallel-PIR/graphs";
+    std::string folderPath = "/home/nhat/Desktop/CSA-parallel-PIR/parallel-PIR/graphs";
     std::filesystem::create_directory(folderPath);
     filename = folderPath + "/output" + std::to_string(option) + ".txt";
     outputFile.open(filename, std::ios::app); // Open the file in append mode
@@ -197,26 +197,25 @@ int main(int argc, char *argv[]) {
     cout << "Type a number of leaves: 2^"; // Type a number and press enter
     cin >> h; // Get user input from the keyboard
     n = 1 << h; //number of leave nodes
+    onetime1 = false;
+    onetime2 = false;
+    onetime3 = false;
     outputFile << h << std::endl;
 
     //1. One core
     if(option == 1) {
       cout << "***** Menu - One core *****"<< endl;
-      cout << "1.1 Call SealPIR on the whole tree"<< endl;
-      cout << "1.2. Call SealPIR on the bottom layer"<< endl;
-      cout << "1.3. Call SealPIR on the balanced partition"<< endl;
-      cout << "1.4. Call SealPIR on the Probabilistic Batch Code"<< endl;
-      cout << "1.5. End"<< endl;
+      cout << "1. Call SealPIR on the whole tree"<< endl;
+      cout << "2. Call SealPIR on the bottom layer"<< endl;
+      cout << "3. Call SealPIR on the balanced partition"<< endl;
+      cout << "4. Call SealPIR on the Probabilistic Batch Code"<< endl;
+      cout << "5. End"<< endl;
       cout << "Choose your solutions from 1 to 5:  ";
       cin >> solution; // Get user input from the keyboard
 
       if(solution == 5) {
         break;
       }
-
-      onetime1 = true;
-      onetime2 = true;
-      onetime3 = true;
 
       //1.1. Call SealPIR on the whole tree
       if(solution == 1){
