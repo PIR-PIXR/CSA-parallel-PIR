@@ -17,7 +17,7 @@ The output will generate many datasets in the Datasets folder for experimental p
       $ java -cp /path/to/BitcoinDataset/gson-2.10.1.jar:/path/to/BitcoinDataset MainDatasets
 
 ### Executing MainBitcoinAPI.java
-This function collects Bitcoin Blocks in real-time, and we provided many functions to interact with [Bitcoin Data API]([https://arxiv.org/abs/2205.05211](https://www.blockchain.com/explorer/api/blockchain_api)).
+This function collects Bitcoin Blocks in real-time, and we provided many functions to interact with [Bitcoin Data API](https://arxiv.org/abs/2205.05211](https://www.blockchain.com/explorer/api/blockchain_api).
 
       $ javac -cp /path/to/BitcoinDataset/gson-2.10.1.jar:/path/to/BitcoinDataset MainBitcoinAPI.java
       $ java -cp /path/to/BitcoinDataset/gson-2.10.1.jar:/path/to/BitcoinDataset MainBitcoinAPI
