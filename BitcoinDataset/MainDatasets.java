@@ -9,13 +9,11 @@ public class MainDatasets {
 
     public static void main(String[] args) throws APIException, IOException, NoSuchAlgorithmException {
 
-        final String PATH = "/Users/quang/Desktop/MerkleTreeBitcoin/Datasets/";
+        final String PATH = "/Path/to/Datasets/";
 
         ColorSplittingAlgorithm CSA = new ColorSplittingAlgorithm();
         BlockChainApi api = new BlockChainApi();
 
-        // Initialize Gson
-        Gson gson = new Gson();
         //Array of balanced/unbalanced sets
         NodesSet[] NodesSets;
         //List of color sequence c = [c1,...,ch]
