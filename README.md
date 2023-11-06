@@ -121,7 +121,7 @@ The main underlying PIR scheme is [SealPIR library](https://github.com/microsoft
 We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the underlying PIR and several related solutions including [SealPIR+PBC](https://eprint.iacr.org/2017/1142.pdf) and combinations of SealPIR with $h$-repetition, Proof-as-Elements, and layer-based. Note that [SealPIR+PBC](https://eprint.iacr.org/2017/1142.pdf) uses $m=1.5h$ databases of size $2N/h$ each, Proof-as-Elements uses a single proof-database containing all $n$ proofs ($h$ hashes), $h$-Repetition uses $h$ databases of size $N$ each, and layer-based uses $h$ databases of sizes $2,4,\ldots,2^h=n$. Our solution (SealPIR+Coloring) uses $h$ databases of size approximately $N/h$ each. Here, $N=2^{h+1}-2$ is the number of tree nodes (except the root) and $h$ is the height of the perfect binary trees.
 
 <p align="center">
-  <img width="1000" height="400" src="https://github.com/cnquang/CPIR/assets/87842051/1b47d79a-8977-4092-a188-2c26d2579da8"> 
+  <img width="600" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/1b47d79a-8977-4092-a188-2c26d2579da8"> 
 </p>
 <strong> Fig. 5.</strong> A comparison of the server computation costs in parallel of five schemes from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based scheme outperforms others. Size of each node is 32 bytes (hash digest size).
 
@@ -188,7 +188,7 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
 For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (Intel Core i5-1035G1 CPU @1.00GHz×8, 15GiB System memory). We employed two servers and one client, which acted as multiple clients, following the same settings described in [DP-PIR](https://github.com/multiparty/DP-PIR/tree/usenix2022).
 
 <p align="center">
-  <img width="1000" height="400" src="https://github.com/cnquang/CPIR/assets/87842051/c3729bb6-133c-49f5-9b29-00793ce776bc"> 
+  <img width="600" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/c3729bb6-133c-49f5-9b29-00793ce776bc"> 
 </p>
 <strong> Fig. 6.</strong> The computation time for DP-PIR and DP-PIR+Coloring, both online and offline, was evaluated from $n = 2^{10}$ to $n = 2^{16}$ while retrieving 6000 Merkle proofs privately.
 
