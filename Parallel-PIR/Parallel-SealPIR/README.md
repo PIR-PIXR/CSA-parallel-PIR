@@ -61,7 +61,7 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
       $ cd /path/to/Parallel-SealPIR
       $ ./pirmessage_client
       
-- #### AWS
+- #### On AWS
   ##### On the Servers side
       $ Copy pirmessage_server and data.json from your local machine to the Server
       $ Edit inbound rules on Security groups with type ALL TCP and add your client ip address
