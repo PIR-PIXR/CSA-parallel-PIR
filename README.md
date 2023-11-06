@@ -229,7 +229,7 @@ For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (In
   ###### Return to the first terminal
       $ load dpPIR
 
---
+---
 ## [Plotting](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/graphs)
     $ cd /path/to/graphs
     $ python3 figureCSA.py
