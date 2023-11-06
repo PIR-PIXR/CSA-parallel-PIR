@@ -87,12 +87,12 @@ Take a look at the pictures below, guidelines and CSA.java comments for how to u
 
 <img width="415" alt="h5auto" src="https://user-images.githubusercontent.com/102839948/161372568-85df8aed-6424-4977-9853-722879624efe.png">
 
-*Fig 2: An example of the CSA algorithm running option A (Automatic Balanced Ancestral Coloring) when h = 5.*
+*Fig. 2: An example of the CSA algorithm running option A (Automatic Balanced Ancestral Coloring) when h = 5.*
 
 
 <img width="575" alt="h3manual" src="https://user-images.githubusercontent.com/102839948/161372572-773c693e-bd18-4a97-b979-00bbc393fce9.png">
 
-*Fig 3: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
+*Fig. 3: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
 
 ---
 ## [One Client parallel privately retrieves a Merkle proof](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/Parallel-PIR/Parallel-SealPIR)
@@ -102,7 +102,7 @@ Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree.
 <p align="center">
   <img width="600" height="300" src="https://github.com/cnquang/cnquang/assets/87842051/bd15563b-48f7-4422-be5b-02800e704cd6">
 </p>
-<strong> Fig. 1.</strong> An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
+<strong> Fig. 4.</strong> An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
 
 Our Coloring method can be applied on top of any PIR schemes, allowing us to optimize with other Batched PIR solutions following baselines:
 
@@ -124,7 +124,7 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
 <p align="center">
   <img width="1000" height="400" src="https://github.com/cnquang/CPIR/assets/87842051/1b47d79a-8977-4092-a188-2c26d2579da8"> 
 </p>
-<strong> Figure 1.</strong> A comparison of the server computation costs in parallel of five schemes from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based scheme outperforms others. Size of each node is 32 bytes (hash digest size).
+<strong> Fig. 5.</strong> A comparison of the server computation costs in parallel of five schemes from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based scheme outperforms others. Size of each node is 32 bytes (hash digest size).
 
 ---
 ### Compiling SealPIR
@@ -191,7 +191,7 @@ For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (In
 <p align="center">
   <img width="1000" height="400" src="https://github.com/cnquang/CPIR/assets/87842051/c3729bb6-133c-49f5-9b29-00793ce776bc"> 
 </p>
-<strong> Figure 1.</strong> The computation time for DP-PIR and DP-PIR+Coloring, both online and offline, was evaluated from $n = 2^{10}$ to $n = 2^{16}$ while retrieving 6000 Merkle proofs privately.
+<strong> Fig. 6.</strong> The computation time for DP-PIR and DP-PIR+Coloring, both online and offline, was evaluated from $n = 2^{10}$ to $n = 2^{16}$ while retrieving 6000 Merkle proofs privately.
 
 ---
 ### Compiling DP-PIR + Coloring
