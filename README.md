@@ -37,7 +37,7 @@ We develop a divide-and-conquer CSA algorithm that generates a balanced and unba
 We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 vCPUs, 64GiB System Memory, 12.5 Gbps network bandwidth, all running Ubuntu 22-04 LTS). Our Java code (CSA.java) was compiled using Java OpenJDK version 11.0.19. The running times are presented in Figure 1, confirming our algorithm's theoretical complexity (almost linear). Note that the algorithm only ran on a single vCPU of the virtual machine. Our current code can handle trees of heights up to $35$, for which the algorithm took 2.5 hours to complete. For a perfect binary tree of height $h=30$, it took less than 5 minutes to produce a balanced ancestral coloring.
 
 <p align="center">
-  <img width="400" height="350" src="https://github.com/cnquang/CPIR/assets/87842051/185c01a5-a643-437e-a637-f8b02f6cbdc4">
+  <img width="500" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/185c01a5-a643-437e-a637-f8b02f6cbdc4">
 </p>
 <strong> Fig. 1.</strong> The average running times of the Color-Splitting Algorithm (CSA) when generating balanced ancestral colorings for the perfect binary trees with $n = 2^{10},2^{11},...,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
 
