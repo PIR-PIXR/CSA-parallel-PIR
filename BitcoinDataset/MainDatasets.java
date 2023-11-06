@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 import com.google.gson.*;
 import java.security.SecureRandom;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 //-------------------------------------------Color-Spliting-Algorithm (CSA) Main class----------------------------------------
@@ -10,7 +9,7 @@ public class MainDatasets {
 
     public static void main(String[] args) throws APIException, IOException, NoSuchAlgorithmException {
 
-        final String PATH = "path/to/Datasets/";
+        final String PATH = "/Users/quang/Desktop/MerkleTreeBitcoin/Datasets/";
 
         ColorSplittingAlgorithm CSA = new ColorSplittingAlgorithm();
         BlockChainApi api = new BlockChainApi();
@@ -27,19 +26,19 @@ public class MainDatasets {
                 , 'R','S', 'T', 'U', 'V','W', 'X', 'Y', 'Z','0', '1', '2', '3', '4', '5', '6', '7','8', '9'};
 
         //Latest Block
-        /*LatestBlock latestBlock = api.getLatestBlock();
+        LatestBlock latestBlock = api.getLatestBlock();
         System.out.println("Latest Block hash: " + latestBlock.getHash());
-        Block sblock = api.getBlock(latestBlock.getHash());*/
+        Block sblock = api.getBlock(latestBlock.getHash());
         //Single Block
-        Block sblock = api.getBlock("00000000000000000001334ef43cdcfc0b506f4e0309d5386526e2a006b8b121");
+        //Block sblock = api.getBlock("00000000000000000001334ef43cdcfc0b506f4e0309d5386526e2a006b8b121");
 
         //Loop to generate datasets from 2^10 to 2^20
-        for (h = 10; h < 21; h += 2) {
+        for (h = 10; h < 11; h += 2) {
             System.gc(); //runs the garbage collector
             int height = h;
 
             //Building the latest Perfect Merkle tree with adding random leaves
-            List<String> txHashListPerfect = perfectList(sblock.getTransactions(), (int) Math.pow(2, h));
+            List<String> txHashListPerfect = perfectList(sblock, (int) Math.pow(2, h));
 
             //Building the latest Merkle tree
             MerkleTrees PMT = new MerkleTrees(txHashListPerfect);
@@ -67,30 +66,31 @@ public class MainDatasets {
         }
     }
 
-    // Method to generate n leaves in a Bitcoin Merkle tree
-    private static List<String> perfectList(List<Transaction> txs, int n) throws NoSuchAlgorithmException {
+    //Method to collect n leaves/transactions in a Bitcoin
+    private static List<String> perfectList(Block sblock, int n) throws NoSuchAlgorithmException, APIException, IOException {
+        BlockChainApi api = new BlockChainApi();
         List<String> txH = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            if (i < txs.size()) {
-                txH.add(txs.get(i).getHash());
-            }
-            else { //Padding random transactions hash
-                // Convert the integer to a byte array
-                byte[] data = Integer.toString(i).getBytes();
-                // Create an instance of the SHA-256 MessageDigest
-                MessageDigest md = MessageDigest.getInstance("SHA-256");
-                // Compute the hash
-                byte[] hash = md.digest(data);
-                // Convert the hash to a hexadecimal string
-                StringBuilder hexHash = new StringBuilder();
-                for (byte b : hash) {
-                    String hex = String.format("%02x", b);
-                    hexHash.append(hex);
-                }
-                txH.add(hexHash.toString());
-            }
+        List<Transaction> txnew;
+        List<Transaction> txs = sblock.getTransactions();
+
+        while (txs.size() < n) {
+            sblock = api.getBlock(sblock.getPreviousBlockHash());
+            txnew = sblock.getTransactions();
+            txs.addAll(txnew);
         }
 
+        for (int i = 0; i < n; i++) {
+            txH.add(txs.get(i).getHash());
+        }
+
+        return txH;
+    }
+
+    private static List<String> toList(List<Transaction> txs) {
+        List<String> txH = new ArrayList<>();
+        for (Transaction tx : txs) {
+            txH.add(tx.getHash());
+        }
         return txH;
     }
 
@@ -175,7 +175,6 @@ public class MainDatasets {
 
             for (int j = 0; j < (int) Math.pow(2, i + 1); j++) {
                 nodeID++;
-                //System.out.println("i = " + i + " NodeID = " + nodeID);
                 valueObject.addProperty(String.valueOf(nodeID), perfectMT.get(nodeID));
             }
             valueArray.add(valueObject);
