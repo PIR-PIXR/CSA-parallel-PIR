@@ -29,6 +29,11 @@ The server(s) should not be able to learn which path is being retrieved based on
 
 We assume a setting in which the nodes of a Merkle/perfect binary tree are stored at one multi-core server or multiple (single-core) servers. Hence, the system is capable of parallel processing. This is a key assumption of our approach to work. For brevity, we will use the multi-server setting henceforth. To simplify the discussion, we assume that the servers have the same storage/computational capacities and will complete the same workload simultaneously.
 
+<p align="center">
+  <img width="600" height="300" src="https://github.com/cnquang/cnquang/assets/87842051/bd15563b-48f7-4422-be5b-02800e704cd6">
+</p>
+<strong> Fig. 1.</strong> An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
+
 ---
 ## [Bitcoin Datasets in Real-time](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/BitcoinDataset)
 We utilized our Java code to gather 200 Bitcoin Blocks in \textit{real-time} from the \textit{latest} Block 813562, containing 2390 transactions, mined on 2023-10-24 at 09:52:26 GMT +11, to Block 813363, which included 2769 transactions and was mined on 2023-10-23 at 04:13:24 GMT +11. On average, within the dataset we collected, there were 1839 transactions in each Block. The number of transactions in each Bitcoin Block typically ranges from 1000 to 4500, and the number of active addresses per day is more than 900K. To interface with the [Blockchain Data API](https://www.blockchain.com/explorer/api/blockchain_api) for collecting real-time Bitcoin Blocks in JSON format, we used HttpURLConnection and [Google GSON](https://github.com/google/gson) 2.10.1.
@@ -57,7 +62,7 @@ We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) 
 <p align="center">
   <img width="500" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/185c01a5-a643-437e-a637-f8b02f6cbdc4">
 </p>
-<strong> Fig. 1.</strong> The average running times of the Color-Splitting Algorithm (CSA) when generating balanced ancestral colorings for the perfect binary trees with $n = 2^{10},2^{11},...,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
+<strong> Fig. 2.</strong> The average running times of the Color-Splitting Algorithm (CSA) when generating balanced ancestral colorings for the perfect binary trees with $n = 2^{10},2^{11},...,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
 
 ---
 ### Compiling CSA
@@ -87,22 +92,15 @@ Take a look at the pictures below, guidelines and CSA.java comments for how to u
 
 <img width="415" alt="h5auto" src="https://user-images.githubusercontent.com/102839948/161372568-85df8aed-6424-4977-9853-722879624efe.png">
 
-*Fig. 2: An example of the CSA algorithm running option A (Automatic Balanced Ancestral Coloring) when h = 5.*
+*Fig. 3: An example of the CSA algorithm running option A (Automatic Balanced Ancestral Coloring) when h = 5.*
 
 
 <img width="575" alt="h3manual" src="https://user-images.githubusercontent.com/102839948/161372572-773c693e-bd18-4a97-b979-00bbc393fce9.png">
 
-*Fig. 3: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
+*Fig. 4: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
 
 ---
 ## [One Client parallel privately retrieves a Merkle proof](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/Parallel-PIR/Parallel-SealPIR)
-
-Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree. Now, the client wants to privately and efficiently download the Merkle proof of that item and verify if the item is really included in the block. Given the index, the client knows precisely which nodes to download from the Merkle tree.
-
-<p align="center">
-  <img width="600" height="300" src="https://github.com/cnquang/cnquang/assets/87842051/bd15563b-48f7-4422-be5b-02800e704cd6">
-</p>
-<strong> Fig. 4.</strong> An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
 
 Our Coloring method can be applied on top of any PIR schemes, allowing us to optimize with other Batched PIR solutions following baselines:
 
