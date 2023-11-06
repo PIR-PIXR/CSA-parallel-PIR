@@ -227,6 +227,7 @@ For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (In
       $ ./experiments/local.sh 2 1
   ###### Return to the first terminal
       $ load dpPIR
+  You can find a description for these experiments under experiments/orchestrator/stored/dpPIR.json.
 
 ---
 ## [Plotting](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/graphs)
