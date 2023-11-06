@@ -34,6 +34,46 @@ We assume a setting in which the nodes of a Merkle/perfect binary tree are store
 
 We develop a divide-and-conquer CSA algorithm that generates a balanced and unbalanced ancestral coloring. For balanced ancestral coloring, the algorithm's running time is almost linear in the number of tree nodes, the running time is in O(N*loglog(N)). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously, proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
 
+We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 vCPUs, 64GiB System Memory, 12.5 Gbps network bandwidth, all running Ubuntu 22-04 LTS). Our Java code (CSA.java) was compiled using Java OpenJDK version 11.0.19. The running times are presented in Figure 1, confirming our algorithm's theoretical complexity (almost linear). Note that the algorithm only ran on a single vCPU of the virtual machine. Our current code can handle trees of heights up to $35$, for which the algorithm took 2.5 hours to complete. For a perfect binary tree of height $h=30$, it took less than 5 minutes to produce a balanced ancestral coloring.
+
+<p align="center">
+  <img width="400" height="350" src="https://github.com/cnquang/CPIR/assets/87842051/185c01a5-a643-437e-a637-f8b02f6cbdc4">
+</p>
+<strong> Fig. 1.</strong> The average running times of the Color-Splitting Algorithm (CSA) when generating balanced ancestral colorings for the perfect binary trees with $n = 2^{10},2^{11},...,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
+
+---
+### Compiling CSA
+#### Installing Libraries
+
+- ##### Javac
+      $ sudo apt update
+      $ sudo apt upgrade
+      $ sudo apt install default-jdk
+
+#### Executing CSA
+- ##### Once Java and Javac are installed, to build CSA simply run:
+
+      $ javac CSA.java
+      $ java CSA
+
+- ##### To build CSA with recommended max heap size simply run:
+
+      $ javac CSA.java
+      $ java -Xmx32g CSA
+    
+#### User Interface Guideline (CSA)
+
+Take a look at the pictures below, guidelines and CSA.java comments for how to use CSA.  
+
+<img width="415" alt="h5auto" src="https://user-images.githubusercontent.com/102839948/161372568-85df8aed-6424-4977-9853-722879624efe.png">
+
+*Fig 2: An example of the CSA algorithm running option A (Automatic Balanced Ancestral Coloring) when h = 5.*
+
+
+<img width="575" alt="h3manual" src="https://user-images.githubusercontent.com/102839948/161372572-773c693e-bd18-4a97-b979-00bbc393fce9.png">
+
+*Fig 3: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
+
 ---
 ## [Parallel PIR retrieving Merkle proof](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/parallel-PIR)
 
