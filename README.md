@@ -95,18 +95,23 @@ Take a look at the pictures below, guidelines and CSA.java comments for how to u
 *Fig 3: An example of the CSA algorithm running option B (Manual Feasible Color Sequences) with c = [3 3 8].*
 
 ---
-## [Parallel PIR retrieving Merkle proof](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/parallel-PIR)
+## [One Client parallel privately retrieves a Merkle proof](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/Parallel-PIR/Parallel-SealPIR)
 
-Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree. Note that the index retrieval phase does not rule out the case where the item does not belong to the block. Now, the client wants to privately and efficiently download the Merkle proof of that item and verify if the item is really included in the block. Given the index, the client knows precisely which nodes to download from the Merkle tree. Our solution (h-time-WholeTree) is to run $h$ parallel PIR on the $h$ color classes/sub-databases as a result of CSA.
+Suppose the client has an item $T_j$ and knows its index $j$ in the Merkle tree. Now, the client wants to privately and efficiently download the Merkle proof of that item and verify if the item is really included in the block. Given the index, the client knows precisely which nodes to download from the Merkle tree.
 
 <p align="center">
   <img width="600" height="300" src="https://github.com/cnquang/cnquang/assets/87842051/bd15563b-48f7-4422-be5b-02800e704cd6">
 </p>
 <strong> Fig. 1.</strong> An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
 
----
-## Experimental setup
-We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz, 32 vCPUs, 64GiB System Memory, 12.5 Gbps network bandwidth). We performed these experiments on Ubuntu 22-04 LTS.
++ Angle et al.'s batchPIR (SealPIR+PBC) \cite{angel2018} employs SealPIR as the foundational PIR. Note that (SealPIR+PBC) uses $m=1.5h$ databases of size $2N/h$ each.
+
++ $h$-Repetition (see Remark~\ref{rm:parallel_obvious}), which is a trivial solution repeated $h$ times SealPIR on top of the whole tree.
+
++ Proof-as-Element is applied SealPIR once on a database where each element is a Merkle proof ($h$ hashes).
+
++ Layer-based, which is a trivial coloring solution repeated $h$ times SealPIR on each layer of the tree.
+
 
 ---
 ## ACKNOWLEDGMENTS 
