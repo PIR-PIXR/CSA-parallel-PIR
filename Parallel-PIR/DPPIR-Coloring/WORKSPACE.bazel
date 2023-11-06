@@ -1,0 +1,56 @@
+workspace(name = "DP-PIR")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# CC rules.
+http_archive(
+    name = "rules_cc",
+    urls = ["https://github.com/bazelbuild/rules_cc/releases/download/0.0.1/rules_cc-0.0.1.tar.gz"],
+    sha256 = "4dccbfd22c0def164c8f47458bd50e0c7148f3d92002cdb459c2a96a68498241",
+)
+
+load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies")
+rules_cc_dependencies()
+
+# External/foreign tools to include make projects.
+http_archive(
+    name = "rules_foreign_cc",
+    sha256 = "6041f1374ff32ba711564374ad8e007aef77f71561a7ce784123b9b4b88614fc",
+    strip_prefix = "rules_foreign_cc-0.8.0",
+    url = "https://github.com/bazelbuild/rules_foreign_cc/archive/0.8.0.tar.gz",
+)
+
+load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
+rules_foreign_cc_dependencies()
+
+# Abseil
+http_archive(
+    name = "com_google_absl",  # 2021-05-20T02:59:16Z
+    sha256 = "aeba534f7307e36fe084b452299e49b97420667a8d28102cf9a0daeed340b859",
+    strip_prefix = "abseil-cpp-7971fb358ae376e016d2d4fc9327aad95659b25e",
+    urls = ["https://github.com/abseil/abseil-cpp/archive/7971fb358ae376e016d2d4fc9327aad95659b25e.zip"],
+)
+
+# libsodium
+http_archive(
+    name = "libsodium",
+    build_file_content = """
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
+
+filegroup(
+    name = "all_srcs",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"]
+)
+
+configure_make(
+    name = "libsodium",
+    lib_source = ":all_srcs",
+    out_lib_dir = "lib",
+    visibility = ["//visibility:public"],
+)
+""",
+    strip_prefix = "libsodium-1.0.18-RELEASE",
+    type = "zip",
+    url = "https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.zip",
+)

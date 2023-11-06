@@ -1,0 +1,7 @@
+filegroup(
+    name = "configurations",
+    srcs = glob([
+        "config/*.txt",
+    ]),
+    visibility = ["//:__subpackages__"],
+)
