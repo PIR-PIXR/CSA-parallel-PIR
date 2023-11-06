@@ -51,6 +51,7 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
       $ cd /path/to/Parallel-SealPIR
       $ cmake .
       $ make
+      $ -> Generated: CXX executable pirmessage_server and CXX executable pirmessage_client
       
 - #### On your local machine
   ##### Open the first terminal as Server side (You can create as many servers as you want in the separate terminals. Make sure each server opens different port numbers)
