@@ -53,10 +53,9 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
       $ make
       
 - #### On your local machine
-  ##### Open the first terminal as Server side
+  ##### Open the first terminal as Server side (You can create as many servers as you want in the separate terminals. Make sure each server opens different port numbers)
       $ cd /path/to/Parallel-SealPIR
       $ ./pirmessage_server -port 3000
-You can create as many servers as you want in the separate terminals. Make sure each server opens different port numbers
   ##### Open the second terminal as Client side
       $ Change the servers_list.txt with local IP address 127.0.0.1:3000; database file name (change the database name in the Server side to data.json); and index i in the database
       $ cd /path/to/Parallel-SealPIR
