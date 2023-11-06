@@ -63,7 +63,7 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
       $ ./pirmessage_client
       
 - #### On AWS
-Create EC2 instances on AWS. Ensure all the instances have TCP allow ports in the 0 to 65535 range. Connect all instances via SSH.
+  Create EC2 instances on AWS. Ensure all the instances have TCP allow ports in the 0 to 65535 range. Connect all instances via SSH.
   ##### On the Servers side
       $ Copy pirmessage_server and data.json from your local machine to the Server
       $ Edit inbound rules on Security groups with type ALL TCP and add your client ip address
