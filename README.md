@@ -30,6 +30,24 @@ The server(s) should not be able to learn which path is being retrieved based on
 We assume a setting in which the nodes of a Merkle/perfect binary tree are stored at one multi-core server or multiple (single-core) servers. Hence, the system is capable of parallel processing. This is a key assumption of our approach to work. For brevity, we will use the multi-server setting henceforth. To simplify the discussion, we assume that the servers have the same storage/computational capacities and will complete the same workload simultaneously.
 
 ---
+## [Bitcoin Datasets in Real-time](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/BitcoinDataset)
+We utilized our Java code to gather 200 Bitcoin Blocks in \textit{real-time} from the \textit{latest} Block 813562, containing 2390 transactions, mined on 2023-10-24 at 09:52:26 GMT +11, to Block 813363, which included 2769 transactions and was mined on 2023-10-23 at 04:13:24 GMT +11. On average, within the dataset we collected, there were 1839 transactions in each Block. The number of transactions in each Bitcoin Block typically ranges from 1000 to 4500, and the number of active addresses per day is more than 900K. To interface with the [Blockchain Data API](https://www.blockchain.com/explorer/api/blockchain_api) for collecting real-time Bitcoin Blocks in JSON format, we used HttpURLConnection and [Google GSON](https://github.com/google/gson) 2.10.1.
+
+### Executing MainDatasets.java
+The output will generate many datasets in the Datasets folder for experimental purposes.
+
+      $ cd path/to/BitcoinDataset
+      $ javac -cp /path/to/BitcoinDataset/gson-2.10.1.jar:/path/to/BitcoinDataset MainDatasets.java
+      $ java -cp /path/to/BitcoinDataset/gson-2.10.1.jar:/path/to/BitcoinDataset MainDatasets
+
+### Executing MainBitcoinAPI.java
+This function collects Bitcoin Blocks in real-time, and we provided many functions to interact with [Bitcoin Data API](https://www.blockchain.com/explorer/api/blockchain_api).
+
+      $ cd path/to/BitcoinDataset
+      $ javac -cp /path/to/BitcoinDataset/gson-2.10.1.jar:/path/to/BitcoinDataset MainBitcoinAPI.java
+      $ java -cp /path/to/BitcoinDataset/gson-2.10.1.jar:/path/to/BitcoinDataset MainBitcoinAPI
+
+---
 ## [CSA: Color-Splitting Algorithm](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/CSA)
 
 We develop a divide-and-conquer CSA algorithm that generates a balanced and unbalanced ancestral coloring. For balanced ancestral coloring, the algorithm's running time is almost linear in the number of tree nodes, the running time is in O(N*loglog(N)). The flexibility of our algorithm establishes the existence of optimal combinatorial patterned batch codes corresponding to the case of servers with heterogeneous storage capacities. At the high level, the algorithm colors two sibling nodes simultaneously, proceeds recursively down to the two subtrees and repeats the process while maintaining the Ancestral Property. Using our algorithm, we can generate a balanced ancestral coloring for the tree $T(30)$ (around two billion nodes) remarkably fast in under five minutes (with 16GB allocated for Java's heap memory).
@@ -53,11 +71,13 @@ We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) 
 #### Executing CSA
 - ##### Once Java and Javac are installed, to build CSA simply run:
 
+      $ cd path/to/CSA
       $ javac CSA.java
       $ java CSA
 
 - ##### To build CSA with recommended max heap size simply run:
 
+      $ cd path/to/CSA
       $ javac CSA.java
       $ java -Xmx32g CSA
     
