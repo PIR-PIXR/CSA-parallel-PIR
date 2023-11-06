@@ -44,18 +44,6 @@ For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (In
       $ ./experiments/local.sh 2 1
   ##### Return to the first terminal
       $ load dpPIR
-      
-- #### On AWS
-  Create EC2 instances on AWS. Ensure all the instances have TCP allow ports in the 0 to 65535 range. Connect all instances via SSH.
-  ##### On the Servers side
-      $ Copy pirmessage_server and data.json from your local machine to the Server
-      $ Edit inbound rules on Security groups with type ALL TCP and add your client ip address
-      $ ./pirmessage_server -port 3000
-  ##### Open the Client side
-      $ Copy pirmessage_client, encryption_parameters.bin, and servers_list.txt from your local machine to the Client
-      $ Change the servers_list.txt with each Server IP address (e.g., 54.253.187.61:3000); database file name; and index i in the database for each line in the file
-      $ cd /path/to/Parallel-SealPIR
-      $ ./pirmessage_client
 
 ---
 ## ACKNOWLEDGMENTS
