@@ -10,7 +10,7 @@ For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (In
 <strong> Figure 1.</strong> The computation time for DP-PIR and DP-PIR+Coloring, both online and offline, was evaluated from $n = 2^{10}$ to $n = 2^{16}$ while retrieving 6000 Merkle proofs privately.
 
 ---
-## Compiling SealPIR
+## Compiling DP-PIR + Coloring
 ### Installing Libraries
 
 - #### g++-11
