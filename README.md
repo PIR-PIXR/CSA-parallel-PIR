@@ -180,7 +180,6 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
   ###### Open the Client side
       $ Copy pirmessage_client, encryption_parameters.bin, and servers_list.txt from your local machine to the Client
       $ Change the servers_list.txt with each Server IP address (e.g., 54.253.187.61:3000); database file name; and index i in the database for each line in the file
-      $ cd /path/to/Parallel-SealPIR
       $ ./pirmessage_client
 
 ---
