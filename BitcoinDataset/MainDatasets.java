@@ -31,7 +31,7 @@ public class MainDatasets {
         //Block sblock = api.getBlock("00000000000000000001334ef43cdcfc0b506f4e0309d5386526e2a006b8b121");
 
         //Loop to generate datasets from 2^10 to 2^20
-        for (h = 10; h < 11; h += 2) {
+        for (h = 10; h < 21; h += 2) {
             System.gc(); //runs the garbage collector
             int height = h;
 
@@ -228,7 +228,7 @@ public class MainDatasets {
         }
     }
 
-    // Method to generate a proof-as-element database
+    // Method to generate a PBC database
     private static void genPBCDatabase(Map<Integer, String> perfectMT, int height, String PATH) {
         // Initialize Gson
         Gson gson = new Gson();
