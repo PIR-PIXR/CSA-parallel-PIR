@@ -22,7 +22,7 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
 ### Installing Libraries
 
 - #### SEAL 4.0.0
-      $ sudo apt install build-essential cmake clang git g++ libssl-dev libgmp3-dev
+      $ sudo apt install -y build-essential cmake git g++ libssl-dev libgmp3-dev
       $ sudo apt update
       $ sudo apt upgrade
       $ git clone https://github.com/cnquang/SEAL-4.0.0.git
