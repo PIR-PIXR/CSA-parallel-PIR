@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500" height="200" src="https://github-production-user-asset-6210df.s3.amazonaws.com/87842051/293288659-bba521cd-cf66-4a19-8246-f76475631963.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T232401Z&X-Amz-Expires=300&X-Amz-Signature=208fb51c88b00c05114996376306e29d75b4ae736590a1c25e5211987e80392c&X-Amz-SignedHeaders=host&actor_id=87842051&key_id=0&repo_id=474514659">
+  <img width="550" height="200" src="https://github-production-user-asset-6210df.s3.amazonaws.com/87842051/293288659-bba521cd-cf66-4a19-8246-f76475631963.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20231228%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231228T232401Z&X-Amz-Expires=300&X-Amz-Signature=208fb51c88b00c05114996376306e29d75b4ae736590a1c25e5211987e80392c&X-Amz-SignedHeaders=host&actor_id=87842051&key_id=0&repo_id=474514659">
 </p>
 
 # Parallel Private Retrieval of Merkle Proofs via Tree Colorings
