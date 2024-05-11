@@ -193,7 +193,7 @@ For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (In
 <p align="center">
   <img width="600" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/c3729bb6-133c-49f5-9b29-00793ce776bc"> 
 </p>
-s
+
 **Fig. 6.** The computation time for DP-PIR and DP-PIR+Coloring, both online and offline, was evaluated from $n = 2^{10}$ to $n = 2^{16}$ while retrieving 6000 Merkle proofs privately.
 
 ---
