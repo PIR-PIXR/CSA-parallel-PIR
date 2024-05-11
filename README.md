@@ -32,7 +32,8 @@ We assume a setting in which the nodes of a Merkle/perfect binary tree are store
 <p align="center">
   <img width="600" height="300" src="https://github.com/cnquang/cnquang/assets/87842051/bd15563b-48f7-4422-be5b-02800e704cd6">
 </p>
-<strong> Fig. 1.</strong> An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
+
+**Fig. 1.** An illustration of our coloring-based parallel private retrieval of Merkle proofs. First, the nodes of the Merkle tree of height $h$ are partitioned into $h$ parts/color classes/sub-databases, each of which is stored by a server. The client runs $h$ PIR schemes with these $h$ servers in parallel to privately retrieve $h$ nodes of the Merkle proof, one from each server. Here, PIR.Query and PIR. Answer refers to the query and answer generations in the corresponding PIR scheme.
 
 ---
 ## [Bitcoin Datasets in Real-time](https://github.com/PIR-PIXR/CSA-parallel-PIR/tree/main/BitcoinDataset)
@@ -64,7 +65,8 @@ We ran our experiments using the Amazone c6i.8xlarge instance (Intel(R) Xeon(R) 
 <p align="center">
   <img width="500" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/185c01a5-a643-437e-a637-f8b02f6cbdc4">
 </p>
-<strong> Fig. 2.</strong> The average running times of the Color-Splitting Algorithm (CSA) when generating balanced ancestral colorings for the perfect binary trees with $n = 2^{10},2^{11},...,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
+
+**Fig. 2.** The average running times of the Color-Splitting Algorithm (CSA) when generating balanced ancestral colorings for the perfect binary trees with $n = 2^{10},2^{11},...,2^{20}$ leaves. For each $n$, the algorithm was run a hundred times, and the average running time was recorded.
 
 ---
 ### Compiling CSA
@@ -124,7 +126,8 @@ We compared the performance of our scheme (SealPIR+Coloring) with SealPIR as the
 <p align="center">
   <img width="600" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/1b47d79a-8977-4092-a188-2c26d2579da8"> 
 </p>
-<strong> Fig. 5.</strong> A comparison of the server computation costs in parallel of five schemes from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based scheme outperforms others. Size of each node is 32 bytes (hash digest size).
+
+**Fig. 5.** A comparison of the server computation costs in parallel of five schemes from $n = 2^{10}$ to $n = 2^{20}$. Our coloring-based scheme outperforms others. Size of each node is 32 bytes (hash digest size).
 
 ---
 ### Compiling SealPIR
@@ -190,6 +193,7 @@ For simplicity, we ran our experiments on a local Ubuntu 22.04.1 environment (In
 <p align="center">
   <img width="600" height="300" src="https://github.com/cnquang/CPIR/assets/87842051/c3729bb6-133c-49f5-9b29-00793ce776bc"> 
 </p>
+s
 **Fig. 6.** The computation time for DP-PIR and DP-PIR+Coloring, both online and offline, was evaluated from $n = 2^{10}$ to $n = 2^{16}$ while retrieving 6000 Merkle proofs privately.
 
 ---
